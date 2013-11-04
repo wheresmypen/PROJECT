@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-image: href='styles.css''CF.jpg';*/
+  background: url('CF.jpg');
+  background-size: 263px, 174px;
+  background-clip:box;
+}
+
+#banner {
+	display: block;
+	color: red;
+	font-size: 48px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#left{
+	position: absolute;
+	top: 750px;
+}
+
+#right{
+	position:absolute;
+	top: 750px;
+	right:175px;
+}
