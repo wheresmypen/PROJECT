@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'ReViVyL' });
+  res.render('index', { title: "<tag line here>" });
 };

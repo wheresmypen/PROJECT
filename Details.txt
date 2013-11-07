@@ -1,0 +1,4 @@
+There are a number of details that I have to save to keep this project on track.
+
+API Key: cd33c3cd8b6ec13a6670c289dc4ac51d
+Secret: is 6b31fdda029117ad44ecbc86de6e26e2
