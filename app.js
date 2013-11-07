@@ -38,15 +38,19 @@ var lastfm = new LastFmNode({
 app.get('/', routes.index);
 app.get('/users', user.list);
 
+app.get('/abba', function(req, res){
+  res.render('layout2');
+});
+
 app.get('/about', function(req, res){
 	var tell = req.query;
 	console.log(tell.goods);
 });
 
-app.get('/abba', function(req, res){
-	var show = req.query;
-	console.log(show.here);
-});
+// app.get('/abba', function(req, res){
+// 	var show = req.query;
+// 	console.log(show.here);
+// });
 
 
 // this is the search request for bands from LastFM
