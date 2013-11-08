@@ -55,25 +55,41 @@ app.get('/about', function(req, res){
 
 // this is the search request for bands from LastFM
 app.post('/search', function(req, res){
-	var returnData=[];
-	console.log(returnData);
+	var artId='';
 	var artistSearch = req.body.artistSearch;
 	var request = lastfm.request("artist.search", {
     	artist: artistSearch,
     	handlers: {
         	success: function(data) {
-            // console.log(data.results.artistmatches.artist);
-            res.send(data);
-            console.log(data);
+            console.log(data.results.artistmatches.artist);
+            // res.send(data);
             var highest = _.max(data.results.artistmatches.artist, function(o){return parseInt(o.listeners);});
-            console.log(highest.mbid);
+            var artId = highest.mbid;
+            console.log(artId);
+
+            // Raine says to make this a function and remove it
+              var request = lastfm.request("artist.getInfo", {
+              artist: artistSearch,
+              mbid: artId,
+              handlers: {
+                  success: function(data) {
+                    console.log(data);
+                    res.send(data);
+                  },
+                  error: function(error) {
+                  console.log("Error: " + error.message);
+                  }
+              }
+
+              });
         	},
         	error: function(error) {
         	console.log("Error: " + error.message);
         	}
     	}
-	});
 
+	});
+  console.log("hoho" + artId);
 	// FURTHER GUIDANCE FROM ROB
 // res.render("/", {searchResult : jsdjdsj} );
 // });
