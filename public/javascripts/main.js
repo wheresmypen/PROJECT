@@ -6,7 +6,7 @@ $(function(){
 		var serge = $(this).serialize();
 		$.post('/search', serge, function(artistInfo){
 		console.log(artistInfo);
-		$("#banner").append("<br>" + artistInfo.artist.bio.placeformed + " is a very cool place indeed!");
+		$("#banner").append("<br>" + artistInfo.results.artistmatches.artist[0].name + " is a very good group.");
 		});
 	});
 

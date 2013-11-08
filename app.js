@@ -8,7 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-
+var _ = require('underscore');
 var LastFmNode = require('lastfm').LastFmNode;
 var app = express();
 
@@ -58,12 +58,15 @@ app.post('/search', function(req, res){
 	var returnData=[];
 	console.log(returnData);
 	var artistSearch = req.body.artistSearch;
-	var request = lastfm.request("artist.getInfo", {
+	var request = lastfm.request("artist.search", {
     	artist: artistSearch,
     	handlers: {
         	success: function(data) {
-            console.log(data.artist.bio);
+            // console.log(data.results.artistmatches.artist);
             res.send(data);
+            console.log(data);
+            var highest = _.max(data.results.artistmatches.artist, function(o){return parseInt(o.listeners);});
+            console.log(highest.mbid);
         	},
         	error: function(error) {
         	console.log("Error: " + error.message);
