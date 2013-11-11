@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: "<tag line here>" });
+  res.render('index', { title: "Not your grand-dad's record collection" });
 };

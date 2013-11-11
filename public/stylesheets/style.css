@@ -11,6 +11,14 @@ body {
   z-index: -250;
 }
 
+
+.box{
+  position: absolute;
+  position: relative;
+  width: 1499px;
+  left:-100px;
+}
+
 #content{
 	background-color: rgba(255, 255, 255, .5);
 	min-height: 200px;
@@ -53,7 +61,7 @@ body {
 	text-align: center;
 	display: block;
 	color: gold;
-	font-size: 48px;
+	font-size: 18px;
 }
 
 a {
@@ -119,8 +127,8 @@ a {
 }
 
 #left, #right{
-	position: relative;
-	top:0px;
+/*	position: relative;
+	top:-500px;*/
 	z-index: 99;
 	display: block;
 }

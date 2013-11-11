@@ -1,5 +1,8 @@
 $(function(){
 
+	var source = $("#hb-template").html();
+	var template = Handlebars.compile(source);
+
 	$("#allbar").on('submit', function(e){
 		var key = e.which;
 		e.preventDefault();
@@ -10,15 +13,24 @@ $(function(){
 		});
 	});
 
-	$("#clkl").on('click', function(){
-		console.log("hear me!");
-		$.get('/about', {"goods": "bads"});
-	});
+	var context = {"artist":"ABBA","location":"home"};
 
-	$("#clkr").on('click', function(){
-		console.log("see me!");
-		$.get('/abba', {"here": "now"});
-	});
+	var html = template(context);
+
+	console.log(JSON.stringify(html));
+
+	$("#HERTZ").append(html);
+
+
+	// $("#clkl").on('click', function(){
+	// 	console.log("hear me!");
+	// 	$.get('/about', {"goods": "bads"});
+	// });
+
+	// $("#clkr").on('click', function(){
+	// 	console.log("see me!");
+	// 	$.get('/abba', {"here": "now"});
+	// });
 
 
 })

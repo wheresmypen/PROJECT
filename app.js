@@ -10,6 +10,10 @@ var http = require('http');
 var path = require('path');
 var _ = require('underscore');
 var LastFmNode = require('lastfm').LastFmNode;
+var mongoose = require('mongoose');
+
+
+
 var app = express();
 
 // all environments
@@ -28,6 +32,64 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+
+console.log('starting');
+
+// create database connection
+
+mongoose.connect('mongodb://localhost/revivyl');
+var db = mongoose.connection;
+
+// create database schema
+
+var albumSchema = mongoose.Schema({
+  name: String,
+  artist: String,
+  mbid: String,
+  releaseYear: Number,
+  producers: String,
+  engineers: String,
+  labels: String
+});
+
+// create album model passing the name and the schema
+
+var Album = mongoose.model('Album', albumSchema);
+
+// pass hard-coded data to album model
+
+var albumData = new Album({
+  name: "The Album",
+  artist: "ABBA",
+  mbid: "d87e52c5-bb8d-4da8-b941-9f4928627dc8",
+  releaseYear: 1977,
+  producers: "Benny Andersson and Bjorn Ulvaeus",
+  engineers: "Michael B. Tretow",
+  labels: "Atlantic"
+});
+
+// calling the save function on this object saves the data to database
+
+albumData.save();
+
+
+Album.findOne({artist: "ABBA"}, 'name', function (err, album){
+  if (err) return handleError(err);
+  console.log('%s says hi', album.name)
+});
+
+Album.find(function (err, data){
+  if (err)
+    console.log("did not connect")
+  else
+    console.log(data)
+});
+
+
+
+// db.createCollection("Artist");
+// Artist.insert({name:"Abba", albums:["GOLD", "Voulez-vous"], artistID:mbid, members:[mbid[1],mbid[2],mbid[3]]});
+
 // this is for loggin' in and identifying with LastFM for their info
 var lastfm = new LastFmNode({
   api_key: 'cd33c3cd8b6ec13a6670c289dc4ac51d',    // sign-up for a key at http://www.last.fm/api
@@ -39,12 +101,15 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 app.get('/abba', function(req, res){
-  res.render('layout2');
+  // var tell = req.query;
+  // console.log = tell;
+  res.render('index2');
 });
 
 app.get('/about', function(req, res){
 	var tell = req.query;
 	console.log(tell.goods);
+  res.send("poop");
 });
 
 // app.get('/abba', function(req, res){
@@ -69,14 +134,13 @@ app.post('/search', function(req, res){
 
             // Raine says to make this a function and remove it
               var request = lastfm.request("artist.getInfo", {
-              artist: artistSearch,
               mbid: artId,
               handlers: {
-                  success: function(data) {
+                  success: function(data){
                     console.log(data);
                     res.send(data);
                   },
-                  error: function(error) {
+                  error: function(error){
                   console.log("Error: " + error.message);
                   }
               }
