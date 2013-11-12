@@ -59,6 +59,7 @@ var Album = mongoose.model('Album', albumSchema);
 // pass hard-coded data to album model
 
 var albumData = new Album({
+<<<<<<< HEAD
   name: "Catch Bull at Four",
   artist: "Cat Stevens",
   mbid: "5adb8b74-54b8-4700-836e-550b6a2a2f71",
@@ -66,6 +67,15 @@ var albumData = new Album({
   producers: "Paul Samwell-Smith",
   engineers: "",
   labels: "A&M"
+=======
+  name: "The Album",
+  artist: "ABBA",
+  mbid: "d87e52c5-bb8d-4da8-b941-9f4928627dc8",
+  releaseYear: 1977,
+  producers: "Benny Andersson and Bjorn Ulvaeus",
+  engineers: "Michael B. Tretow",
+  labels: "Atlantic"
+>>>>>>> bf2388e80593844d10820554884f9fa713709ab8
 });
 
 // calling the save function on this object saves the data to database
@@ -73,6 +83,7 @@ var albumData = new Album({
 albumData.save();
 
 
+<<<<<<< HEAD
 // Album.findOne({artist: "ABBA"}, 'name', function (err, album){
 //   if (err) return handleError(err);
 //   console.log('%s says hi', album.name)
@@ -83,6 +94,18 @@ Album.find(function (err, data){
     console.log("did not connect");
   else
     console.log(data);
+=======
+Album.findOne({artist: "ABBA"}, 'name', function (err, album){
+  if (err) return handleError(err);
+  console.log('%s says hi', album.name)
+});
+
+Album.find(function (err, data){
+  if (err)
+    console.log("did not connect")
+  else
+    console.log(data)
+>>>>>>> bf2388e80593844d10820554884f9fa713709ab8
 });
 
 
@@ -107,8 +130,14 @@ app.get('/abba', function(req, res){
 });
 
 app.get('/about', function(req, res){
+<<<<<<< HEAD
 	// var tell = req.query;
 	res.render('index3');
+=======
+	var tell = req.query;
+	console.log(tell.goods);
+  res.send("poop");
+>>>>>>> bf2388e80593844d10820554884f9fa713709ab8
 });
 
 // app.get('/abba', function(req, res){
