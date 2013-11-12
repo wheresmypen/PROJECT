@@ -58,16 +58,15 @@ var Album = mongoose.model('Album', albumSchema);
 
 // pass hard-coded data to album model
 
-var albumName = "abc";
 
 var albumData = new Album({
-  name: albumName,
-  artist: "Cat Stevens",
-  mbid: "5adb8b74-54b8-4700-836e-550b6a2a2f71",
-  releaseYear: 1972,
-  producers: "Paul Samwell-Smith",
+  name: "",
+  artist: "",
+  mbid: "",
+  releaseYear: null,
+  producers: "",
   engineers: "",
-  labels: "A&M"
+  labels: ""
 });
 
 // calling the save function on this object saves the data to database
@@ -87,9 +86,9 @@ Album.find(function (err, data){
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
   }
   else{
-    console.log("#####################################################");
+    console.log("####################################################");
     console.log(data);
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("####################################################");
   }
 });
 
@@ -108,10 +107,10 @@ var lastfm = new LastFmNode({
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-app.get('/abba', function(req, res){
+app.get('/artists/Abba', function(req, res){
   // var tell = req.query;
   // console.log = tell;
-  res.render('index2');
+  res.render('band');
 });
 
 app.get('/about', function(req, res){
@@ -119,6 +118,13 @@ app.get('/about', function(req, res){
 	res.render('index3');
 
 });
+
+app.get("/artists/:artist/:album", function(req, res){
+  var artist = req.params.artist;
+  var album = req.params.album;
+  console.log(artist, album)
+  res.render("index2");
+})
 
 app.post('/albums', function(req, res){
   var albumData = new Album({
@@ -131,7 +137,7 @@ app.post('/albums', function(req, res){
     labels: req.body.recordLabel
   });
   albumData.save(function(){
-    res.redirect("/abba");
+    res.redirect("/artists/" + albumData.artist + "/" + albumData.name);
   })
 });
 
