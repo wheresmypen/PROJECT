@@ -1,0 +1,30 @@
+extends layout3
+
+
+block comment
+	<br>
+	<br>
+	container#newAlbumInfo
+		input#focused1Input.form-control(type='text', value='', name='albumTitle')
+		|Album Title
+		<br>
+		input#focused2Input.form-control(type='text', value='', name='artistTitle')
+		| Group/Soloist
+		<br>
+		input#focused3Input.form-control(type='number', value='Year of Release', name='titleYear')
+		| Year of Release
+		<br>
+		input#focused4Input.form-control(type='text', value='', name='producersName')
+		| Producer(s)
+		<br>
+		input#focused5Input.form-control(type='text', value='', name='recordLabel')
+		| Label(s)
+
+
+	script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js")
+	script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+	script(src="/javascripts/main.js")
+
+
+	include handlebars.html
+

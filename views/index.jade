@@ -2,25 +2,43 @@ extends layout
 
 
 block content
+ <br>
+ <br>
+ .container#content.row
+  div
+    //- This is the logo and company name
+    div
+      img#logo(src='images/Logo.jpg')
+      div.logo ReViVyL Vinyl
+      
+        //- THIS IS THE FIXED SEARCH BAR
+    form#allbar(role='form')
+      input#artist(name= "artistSearch", placeholder="#find your music here#");
+      button#findArtist(type= "submit" name="artistSearchButton") SEARCH
+      h4 Look for Artists and Musical Groups Here
+      //- THIS IS THE LOGIN FORM
+    h1.bottom Welcome to the wacky world of forgotten vinyl
+     //- form#idSearch(role='form')
+     //-    .form-group
+     //-    label(for='exampleInputEmail1') Email address
+     //-    input#exampleInputEmail1.form-control(type='email', placeholder='Enter email')
+     //-    .form-group
+     //-    label(for='exampleInputPassword1') Password
+     //-    input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+     //-    p.help-block This will be the form for logging in to enter personal record collection data.
+      //- button.btn.btn-default(type='submit') Submit
 
-  form
-    h1 Welcome to the wacky world of forgotten vinyl
-    input#artist(name= fred, placeholder="Search for music here");
-    h4 Look for Artists, Albums, or Venues
+             //- right-hand pointing left (backward navigate) 
+  div.box
+    #lcont.col-xs-6
+      a#clkl.btn.btn-default.btn-lg(type='button', href="/about") 
+          div.clk LOOK BACK
+      img#left(display='block', float='left', src='images/recordstoredayl.jpeg')
 
-    
+              //- left-hand pointing right (forward navigate)
+    #rcont.col-xs-6
+      a#clkr.btn.btn-default.btn-lg(type='button', href="/abba")
+         div.clk SKIP AHEAD
+      img#right(display='block', float='right', src='images/recordstoredayr.jpeg')
 
-  form(role='form')
-    .form-group
-    p.help-block This will be the form for logging in and entering personal record collection data.
-    label(for='exampleInputEmail1') Email address
-    input#exampleInputEmail1.form-control(type='email', placeholder='Enter email')
-    .form-group
-    label(for='exampleInputPassword1') Password
-    input#exampleInputPassword1.form-control(type='password', placeholder='Password')
-    button.btn.btn-default(type='submit') Submit
-
-            //- right-hand pointing left (backwards) 
-  img#left(display='block', float='left', src='images/recordstoredayl.png')
-            //- left-hand pointing right (forwards)
-  img#right(display='block', float='right', src='images/recordstoredayr.png')
+  include handlebars.html
