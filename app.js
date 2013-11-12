@@ -58,8 +58,10 @@ var Album = mongoose.model('Album', albumSchema);
 
 // pass hard-coded data to album model
 
+var albumName = "abc";
+
 var albumData = new Album({
-  name: "Catch Bull at Four",
+  name: albumName,
   artist: "Cat Stevens",
   mbid: "5adb8b74-54b8-4700-836e-550b6a2a2f71",
   releaseYear: 1972,
@@ -79,10 +81,16 @@ albumData.save();
 // });
 
 Album.find(function (err, data){
-  if (err)
+  if (err){
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     console.log("did not connect");
-  else
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  }
+  else{
+    console.log("#####################################################");
     console.log(data);
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  }
 });
 
 
@@ -110,6 +118,21 @@ app.get('/about', function(req, res){
 	// var tell = req.query;
 	res.render('index3');
 
+});
+
+app.post('/albums', function(req, res){
+  var albumData = new Album({
+    name: req.body.albumTitle,
+    artist: req.body.artistTitle,
+    mbid: "",
+    releaseYear: req.body.titleYear,
+    producers: req.body.producersName,
+    engineers: "",
+    labels: req.body.recordLabel
+  });
+  albumData.save(function(){
+    res.redirect("/abba");
+  })
 });
 
 // app.get('/abba', function(req, res){
