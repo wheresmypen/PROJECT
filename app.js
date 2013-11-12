@@ -138,7 +138,11 @@ app.post('/search', function(req, res){
               handlers: {
                   success: function(data){
                     console.log(data);
-                    res.send(data);
+                    res.render('band', [data], function(err, html){
+                      if (err)
+                        console.log(err);
+                    });
+                    // res.send(data);
                   },
                   error: function(error){
                   console.log("Error: " + error.message);
