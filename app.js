@@ -107,23 +107,27 @@ var lastfm = new LastFmNode({
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-app.get('/artists/Abba', function(req, res){
+app.get('/searchResults', function(req, res){
   // var tell = req.query;
   // console.log = tell;
-  res.render('band');
+  res.render('band-page');
 });
 
-app.get('/about', function(req, res){
+app.get('/compile', function(req, res){
 	// var tell = req.query;
-	res.render('index3');
+	res.render('enter-page');
 
 });
+
+app.get("/band-page", function(req, res){
+  res.render("band-page");
+})
 
 app.get("/artists/:artist/:album", function(req, res){
   var artist = req.params.artist;
   var album = req.params.album;
-  console.log(artist, album)
-  res.render("index2");
+  console.log("You're in the library now!")
+  res.render("album-page", {name:"####ABBA####"});
 })
 
 app.post('/albums', function(req, res){
@@ -148,7 +152,7 @@ app.post('/albums', function(req, res){
 
 
 // this is the search request for bands from LastFM
-app.post('/search', function(req, res){
+app.post('/searchResults', function(req, res){
 	var artId='';
 	var artistSearch = req.body.artistSearch;
 	var request = lastfm.request("artist.search", {
@@ -158,30 +162,30 @@ app.post('/search', function(req, res){
             console.log(data.results.artistmatches.artist);
             // res.send(data);
             var highest = _.max(data.results.artistmatches.artist, function(o){return parseInt(o.listeners);});
+            
+            console.log(highest);
             var artId = highest.mbid;
-            console.log(artId);
+            console.log("%%%%%%%%%%%" + artId);
 
             // Raine says to make this a function and remove it
               var request = lastfm.request("artist.getInfo", {
               mbid: artId,
               handlers: {
                   success: function(data){
-                    console.log(data);
-                    res.render('band', [data], function(err, html){
-                      if (err)
-                        console.log(err);
-                    });
+                    console.log("+++++++++++" + data);
+                    res.render('band-page');
+                    
                     // res.send(data);
                   },
                   error: function(error){
-                  console.log("Error: " + error.message);
+                  console.log("Errorinside: " + error.message);
                   }
               }
 
               });
         	},
         	error: function(error) {
-        	console.log("Error: " + error.message);
+        	console.log("Erroroutside: " + error.message);
         	}
     	}
 

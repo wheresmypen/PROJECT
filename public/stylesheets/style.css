@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /*background-image: href='styles.css''CF.jpg';*/
   background: url('CF.jpg');
   background-repeat: repeat-x;
   background-size: 333px, 333px;
@@ -121,6 +120,8 @@ a {
 
 .bottom{
 	text-align: center;
+	margin-left:auto;
+	right:250px;
 	position: absolute;
 	top: 750px;
 

@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: "Not your grand-dad's record collection" });
+  res.render('head-page', { title: "Include your record collection in our AUDIO-FILE"});
 };
