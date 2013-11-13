@@ -94,8 +94,7 @@ Album.find(function (err, data){
 
 // var library = db.Album.find();
 
-// console.log("here it is:" + library);
-// db.createCollection("Artist");
+
 // Artist.insert({name:"Abba", albums:["GOLD", "Voulez-vous"], artistID:mbid, members:[mbid[1],mbid[2],mbid[3]]});
 
 // this is for loggin' in and identifying with LastFM for their info

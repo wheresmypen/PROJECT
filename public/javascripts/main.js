@@ -7,10 +7,10 @@ $(function(){
 	// 	var key = e.which;
 	// 	e.preventDefault();
 	// 	var serge = $(this).serialize();
-	// 	// $.post('/searchResults', serge, function(artistInfo){
-	// 	// console.log(artistInfo);
-	// 	// // $("#banner").append("<br>" + artistInfo.artist.bio.placeformed + " is a very nice place.");
-	// 	// });
+	// 	$.post('/searchResults', serge, function(artistInfo){
+	// 	console.log(artistInfo);
+	// 	// $("#banner").append("<br>" + artistInfo.artist.bio.placeformed + " is a very nice place.");
+	// 	});
 	// });
 
 	var context = {"artist":"ABBA", "location":"home"};
@@ -25,7 +25,7 @@ $(function(){
 var cloak = "voulez-vous"
 
 	$("#clkl").on('click', function(){
-		console.log("hear me!");
+		console.log("%#%" + albumData + "%#%");
 		window.location.href=('/artists/abba/'+cloak)
 		// $.get('/about', {"goods": "bads"});
 	});

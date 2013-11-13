@@ -58,10 +58,10 @@ body {
 }
 
 #banner {
+	margin-top: -15px;
 	text-align: center;
 	display: block;
 	color: gold;
-	font-size: 18px;
 }
 
 a {
