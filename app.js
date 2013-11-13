@@ -37,7 +37,8 @@ console.log('starting');
 
 // create database connection
 
-mongoose.connect('mongodb://localhost/revivyl');
+MongoURL = process.env.MONGOHQ_URL || 'mongodb://localhost/revivyl'; 
+mongoose.connect(MongoURL);
 var db = mongoose.connection;
 
 // create database schema
