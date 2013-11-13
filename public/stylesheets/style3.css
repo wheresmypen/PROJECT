@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /*background-image: href='styles.css''CF.jpg';*/
   background: url('CF.jpg');
   background-repeat: repeat-x;
   background-size: 333px, 333px;
@@ -28,15 +27,22 @@ body {
     z-index:9999;
     color:red;
 }
+.albumData{
+  padding:10%;
+}
+#shelf{
+  display:inline;
+  z-index: -99;
+}
+
+#newAlbumInfo{
+   background-color: rgba(0,0,0,.2) 
+}
+
 
 #logo{
 	display: block;
-	margin-left: 1.5%;
+/*  float:left;*/
+	margin-left: auto;
 	margin-right: auto;
-}
-
-#allbar{
-	position: absolute;
-	top:10px;
-	right:250px;
 }

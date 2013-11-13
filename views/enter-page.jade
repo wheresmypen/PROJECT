@@ -2,9 +2,10 @@ extends layout3
 
 
 block comment
-	<br>
-	<br>
-	container#newAlbumInfo
+	.container.pagehead
+		img#logo(src='/images/Logo.jpg')
+	.container#newAlbumInfo
+		//- img#shelf(src='/images/vinyl-records.png')
 		form.albumData(action="/albums", method="POST")
 			input#focused1Input.form-control(type='text', value='', name='albumTitle')
 			|Album Title

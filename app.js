@@ -92,8 +92,9 @@ Album.find(function (err, data){
   }
 });
 
+// var library = db.Album.find();
 
-
+// console.log("here it is:" + library);
 // db.createCollection("Artist");
 // Artist.insert({name:"Abba", albums:["GOLD", "Voulez-vous"], artistID:mbid, members:[mbid[1],mbid[2],mbid[3]]});
 
@@ -191,10 +192,7 @@ app.post('/searchResults', function(req, res){
 
 	});
   console.log("hoho" + artId);
-	// FURTHER GUIDANCE FROM ROB
-// res.render("/", {searchResult : jsdjdsj} );
-// });
-// app.get('/:artistName')
+
 });
 
 

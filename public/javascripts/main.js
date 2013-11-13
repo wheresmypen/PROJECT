@@ -22,9 +22,11 @@ $(function(){
 	$("#HERTZ").append(html);
 
 
+var cloak = "voulez-vous"
+
 	$("#clkl").on('click', function(){
 		console.log("hear me!");
-		window.location.href='/artists/abba/voulez-vous'
+		window.location.href=('/artists/abba/'+cloak)
 		// $.get('/about', {"goods": "bads"});
 	});
 
@@ -33,6 +35,7 @@ $(function(){
 	$("#clkr").on('click', function(){
 		console.log("see me!");
 		window.location.href='/artists/abba/voulez-vous'
+
 		// $.get('/artists/abba', {"here": "now"});
 	});
 
