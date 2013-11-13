@@ -120,6 +120,7 @@ a {
 }
 
 .bottom{
+	z-index:250;
 	text-align: center;
 	margin-left:auto;
 	right:250px;

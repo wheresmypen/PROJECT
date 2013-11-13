@@ -7,20 +7,21 @@ block comment
 	.container#newAlbumInfo
 		//- img#shelf(src='/images/vinyl-records.png')
 		form.albumData(action="/albums", method="POST")
-			input#focused1Input.form-control(type='text', value='', name='albumTitle')
+			input#focused1Input.form-control(type='text', value='', name='albumTitle' placeholder="e.g. Abbey Road")
 			|Album Title
 			<br>
-			input#focused2Input.form-control(type='text', value='', name='artistTitle')
+			input#focused2Input.form-control(type='text', value='', name='artistTitle' placeholder="e.g. The Beatles")
 			| Group/Soloist
 			<br>
-			input#focused3Input.form-control(type='number', value=1984, name='titleYear')
+			input#focused3Input.form-control(type='number', value=1969, name='titleYear')
 			| Year of Release
 			<br>
-			input#focused4Input.form-control(type='text', value='', name='producersName')
+			input#focused4Input.form-control(type='text', value='', name='producersName' placeholder="e.g. George Martin")
 			| Producer(s)
 			<br>
-			input#focused5Input.form-control(type='text', value='', name='recordLabel')
+			input#focused5Input.form-control(type='text', value='', name='recordLabel' placeholder="e.g. Apple")
 			| Label(s)
+			<br>
 			button.addData(type="submit") Add Info
 
 

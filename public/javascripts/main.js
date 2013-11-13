@@ -22,10 +22,10 @@ $(function(){
 	$("#HERTZ").append(html);
 
 
-var cloak = "voulez-vous"
+	var cloak = "voulez-vous"
 
 	$("#clkl").on('click', function(){
-		console.log("%#%" + albumData + "%#%");
+		console.log("hear me!");
 		window.location.href=('/artists/abba/'+cloak)
 		// $.get('/about', {"goods": "bads"});
 	});
