@@ -13,20 +13,47 @@ $(function(){
 	// 	});
 	// });
 
-	var context = {"artist":"ABBA", "location":"home"};
+	$.get("/dummy", function(data){
+		console.log(data)
+		var html = template(data);
+		$("#slot").append(html);
+	});
 
-	var html = template(context);
 
-	console.log(JSON.stringify(html));
+// NEED RAINE TO FIX - PASSING ALBUM WITHOUT DATA MAKES THE HANDLEBARS FAIL AND THE APP CRASHES ON LOADING
+	// var albums = [{name: "",
+ //  				artist: "",
+ //  				year: null,
+ //  				producer: "",
+ //  				engineer: "",
+ //  				label: ""}];	
 
-	$("#HERTZ").append(html);
+	// var context = {
+	// 	"artist":"ABBA",
+	// 	"location":"Stockholm, Sweden",
+	// 	"members":"daddy"
+	// 	};
+	// console.log(albums);
+
+
+
+	// setTimeout(function(){
+		
+		// var html = template(albums[0]);
+		// $("#slot").append(html);
+
+	// },2500);
+	
+
+	// console.log(JSON.stringify(html));
+
 
 
 	var cloak = "voulez-vous"
 
 	$("#clkl").on('click', function(){
 		console.log("hear me!");
-		window.location.href=('/artists/abba/'+cloak)
+		window.location.href='/artists/abba/voulez-vous'
 		// $.get('/about', {"goods": "bads"});
 	});
 
@@ -36,7 +63,9 @@ $(function(){
 		console.log("see me!");
 		window.location.href='/artists/abba/voulez-vous'
 
-		// $.get('/artists/abba', {"here": "now"});
+
+    // $.get('/artists/', {"here": "now"});
+	
 	});
 
 	$('#compile').on('click', function(){

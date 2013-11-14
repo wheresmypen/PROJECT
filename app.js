@@ -53,6 +53,12 @@ var albumSchema = mongoose.Schema({
   labels: String
 });
 
+if (!albumSchema.options.toObject) albumSchema.options.toObject = {};
+albumSchema.options.toObject.transform = function (doc, ret, options) {
+  delete ret._id
+  delete ret.__v
+}
+
 // create album model passing the name and the schema
 
 var Album = mongoose.model('Album', albumSchema);
@@ -95,7 +101,6 @@ Album.find(function (err, data){
 
 // var library = db.Album.find();
 
-
 // Artist.insert({name:"Abba", albums:["GOLD", "Voulez-vous"], artistID:mbid, members:[mbid[1],mbid[2],mbid[3]]});
 
 // this is for loggin' in and identifying with LastFM for their info
@@ -124,13 +129,6 @@ app.get("/band-page", function(req, res){
   res.render("band-page");
 })
 
-app.get("/artists/:artist/:album", function(req, res){
-  var artist = req.params.artist;
-  var album = req.params.album;
-  console.log("You're in the library now!")
-  res.render("album-page", {name:"####ABBA####"});
-})
-
 app.post('/albums', function(req, res){
   var albumData = new Album({
     name: req.body.albumTitle,
@@ -144,7 +142,36 @@ app.post('/albums', function(req, res){
   albumData.save(function(){
     res.redirect("/artists/" + albumData.artist + "/" + albumData.name);
   })
+
+app.get("/artists/:artist/:album", function(req, res){
+  var artist = req.params.artist;
+  var album = req.params.album;
+  Album.find({artist:artist}, function(err, albums){
+    console.log(albums);
+   res.render("album-page", {albums: albums});
+  });
+  console.log("You're in the library now!")
+
 });
+
+  
+
+
+});
+
+app.get("/dummy", function(req, res){
+    Album.findOne({}, function (err, oneAlbum) {
+      if(err){
+        console.log('ERROR');
+      }
+      else{
+        console.log('a', oneAlbum);
+        res.send(oneAlbum);
+      }
+    });
+  });
+
+
 
 // app.get('/abba', function(req, res){
 // 	var show = req.query;
@@ -174,7 +201,7 @@ app.post('/searchResults', function(req, res){
               handlers: {
                   success: function(data){
                     console.log("+++++++++++" + data);
-                    res.render('band-page');
+                    res.render('band-page', data);
                     
                     // res.send(data);
                   },
