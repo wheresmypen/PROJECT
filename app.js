@@ -50,7 +50,7 @@ var albumSchema = mongoose.Schema({
   releaseYear: Number,
   producers: String,
   engineers: String,
-  labels: String
+  labels: String,
 });
 
 if (!albumSchema.options.toObject) albumSchema.options.toObject = {};
@@ -160,13 +160,13 @@ app.get("/artists/:artist/:album", function(req, res){
 });
 
 app.get("/dummy", function(req, res){
-    Album.findOne({}, function (err, oneAlbum) {
+    Album.find({},  function (err, albumOne) {
       if(err){
         console.log('ERROR');
       }
       else{
-        console.log('a', oneAlbum);
-        res.send(oneAlbum);
+        var len = albumOne.length;
+        res.send(albumOne[len-1]);
       }
     });
   });
@@ -201,9 +201,9 @@ app.post('/searchResults', function(req, res){
               handlers: {
                   success: function(data){
                     console.log("+++++++++++" + data);
-                    res.render('band-page', data);
+                    // res.render('band-page', data);
                     
-                    // res.send(data);
+                    res.send(data);
                   },
                   error: function(error){
                   console.log("Errorinside: " + error.message);

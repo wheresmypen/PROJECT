@@ -13,12 +13,13 @@ $(function(){
 	// 	});
 	// });
 
+// if (albums.isEmpty){
 	$.get("/dummy", function(data){
 		console.log(data)
 		var html = template(data);
 		$("#slot").append(html);
 	});
-
+// }
 
 // NEED RAINE TO FIX - PASSING ALBUM WITHOUT DATA MAKES THE HANDLEBARS FAIL AND THE APP CRASHES ON LOADING
 	// var albums = [{name: "",
