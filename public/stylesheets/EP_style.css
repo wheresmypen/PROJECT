@@ -1,0 +1,53 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('CF.jpg');
+  background-repeat: repeat-x;
+  background-size: 333px, 333px;
+  background-clip:box;
+  background-attachment:fixed;
+  background-position:bottom; 
+  z-index: -250;
+}
+
+ 
+.logo{
+	font-family: 'Orbitron', sans-serif;
+	text-align: center;
+	color: red;
+	font-size: 96px;
+	font-style: italic;
+	position:absolute;
+    top:25px;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:9999;
+    color:red;
+}
+.albumData{
+  padding:10%;
+}
+#shelf{
+  display:inline;
+  z-index: -99;
+}
+
+#newAlbumInfo{
+   background-color: rgba(0,0,0,.2) 
+}
+
+
+#logo{
+	display: block;
+/*  float:left;*/
+	margin-left: auto;
+	margin-right: auto;
+    position:absolute;
+    top:25px;
+    left:0;
+    right:0;
+    bottom:0;
+}

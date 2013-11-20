@@ -1,0 +1,137 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('CF.jpg');
+  background-repeat: repeat-x;
+  background-size: 333px, 333px;
+  background-clip:box;
+  background-attachment:fixed;
+  background-position:bottom; 
+  z-index: -250;
+}
+
+
+.box{
+  position: absolute;
+  position: relative;
+  width: 1499px;
+  left:-100px;
+}
+
+#content{
+	background-color: rgba(255, 255, 255, .5);
+	min-height: 200px;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	color: blue;
+	z-index: -150;
+}
+
+.logo{
+	font-family: 'Orbitron', sans-serif;
+	text-align: center;
+	color: red;
+	font-size: 131px;
+	font-style: italic;
+	position:absolute;
+    top:128px;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.05);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:99;
+    color:red;
+}
+
+#logo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 999;
+}
+
+#allbar{
+	position: absolute;
+	top:10px;
+	right:250px;
+}
+
+#banner {
+	margin-top: -15px;
+	text-align: center;
+	display: block;
+	color: gold;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#lcont{
+	/*position: absolute;
+	
+	/*margin-right: 150px;*/
+	top: 200px;
+	min-width: 450px;
+}
+
+#rcont{
+	/*position:absolute;*/
+	top: 200px;
+	min-width: 450px;
+	/*right:175px;*/
+	/*margin-left: 150px;*/
+}
+
+.clk{
+	color: white;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(0, 0, 0, .5);
+	text-align: center;
+	max-width: 225px;
+	border-radius: 25px;
+}
+
+#clkl, #clkr{
+/*	display: block;
+	position: relative;*/
+	font-size: 36px; 
+	color: black;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 99;
+	position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:9999;
+    border:0px;
+}
+
+#idSearch{
+	max-height: 200px;
+	color: black;
+}
+
+.bottom{
+	z-index:250;
+	text-align: center;
+	margin-left:auto;
+	right:250px;
+	position: absolute;
+	top: 750px;
+
+}
+
+#left, #right{
+/*	position: relative;
+	top:-500px;*/
+	z-index: 99;
+	display: block;
+}
