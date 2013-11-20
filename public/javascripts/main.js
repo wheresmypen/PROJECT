@@ -48,7 +48,10 @@ $(function(){
 
 	// console.log(JSON.stringify(html));
 
-
+	$.post('/searchResults', function(data){
+		console.log('hi');
+		debugger
+	});
 
 	var cloak = "voulez-vous"
 
