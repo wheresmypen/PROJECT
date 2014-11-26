@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/public/stylesheets/form.css">
+    <title>Input form</title>
+</head>
+
+<body>
+<header>
+    <div>
+        COLORADO MUSIC FESTIVAL
+    </div>
+</header>
+<div class = "navBar">
+    NAVIGATION KEYS
+</div>
+<div id="mainContent">
+
+
+    <!-- This container is a form/body that posts to an added route ...
+    which directs to a confirmation page (conf.js) The submit button is at the bottom
+    Eventually, it ought to direct to a scheduling page based on log-in information-->
+    <form id="usherInfo" method="post" action="/added">
+        <fieldset>
+            <legend>
+                USHER INFORMATION
+            </legend>
+
+            <label for="email" class="toplabel">Email:</label>
+            <input type="email" id="email" name="email" size="40" class = "info ident" maxlength="150"/>
+            <!--This button is disabled, but it is supposed to function by routing to a .js file
+            which searches the database and then populates the form area, like a log-in-->
+            <button type="button" id="idCheck"><strong>CLICK to login (using your email address) if you are already registered</strong></button>
+
+            <br>
+            <br><div style="color: red; text-align: center">PLEASE FILL IN THE EMAIL ADDRESS FIELD</div>
+            <br>
+            <div class="spaceName">
+                <label for="lastname" class="toplabel">Last name:</label>
+                <input type="text" id="lastname" name="lastname" size="30" class = "info name" maxlength="100"/>
+
+                <label for="firstname" class="toplabel">First name:</label>
+                <input type="text" id="firstname" name="firstname" size="30" class = "info name" maxlength="100"/>
+            </div>
+
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>
+                MAILING ADDRESS
+            </legend>
+
+                  <span class="outtatown"><label for="outtatown">Check here if outside of Colorado</label>
+                  <input type="checkbox" id="outtatown" name="outtatown"></span>
+
+            <label for="streetaddress" class="toplabel">Number and street address:</label>
+            <input type="text" id="streetaddress" name="streetaddress" size="75" class = "info" maxlength="150"/>
+
+            <label for="cityaddress" class="toplabel">City:</label>
+            <input type="text" id="cityaddress" name="cityaddress" size="30" class = "info" maxlength="100"/>
+
+            <label for="zipaddress" class="toplabel">Mailing Code:</label>
+            <input type="zip-code" id="zipaddress" name="zipaddress" size="30" class = "info" maxlength="100"/>
+
+        </fieldset>
+        <br>
+
+        <fieldset id="phone">
+
+            <legend>
+                TELEPHONE CONTACT
+            </legend>
+
+                  <span class="phoneNo">Cell phone
+                  <input type="tel" id="cellNo" name="cellNo" size="30" class = "info" maxlength="100"/>
+                  </span>
+
+                  <span class="phoneNo">Alternate phone
+                  <input type="text" id="altPhone" name="altPhone" size="30" class = "info" maxlength="100"/>
+                  </span>
+            <br>
+
+        </fieldset>
+        <div>
+            <div>Select preferred method of contact:
+                <select id="contactMethod" name="contactMethod">
+                    <option value="contactCell">Cell Phone</option>
+                    <option value="contactAltPhone">Alternate Phone</option>
+                    <option value="contactEmail">Via Email</option>
+                    <option value="contactMail">Via Postal Mail</option>
+                    <option value="contactNONE">Please do not contact me!</option>
+                </select>
+            </div>
+                    <span class="toggleContact"><label for="ToggleContact">Check here if you would prefer not to be contacted by CMF</label>
+                    <input type="checkbox" id="toggleContact" name="toggleContact"></span>
+        </div>
+
+        <div class="submitCase">
+            <button type="submit" id="submitInfo">CLICK HERE TO SUBMIT USHER INFORMATION</button>
+            <button type="reset" id="submitClear">CLICK HERE TO CLEAR FORM</button>
+        </div>
+    </form>
+</div>
+<footer>
+    MORE SPACE FILLING TEXT
+</footer>
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="../public/javascripts/actions.js"></script>
+
+</html>

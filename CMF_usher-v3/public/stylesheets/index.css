@@ -1,0 +1,50 @@
+body {
+    background: url("../images/seamless_paper_texture.png") repeat;
+}
+
+.outer {
+    width: 1000px;
+    padding-top: 200px;
+}
+
+
+.inner {
+    background-color: lightcoral;
+    padding: 30px 0px 30px 25px;
+    font-size: 18px;
+    border-radius: 14px;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.none {
+    width: 100px;
+    border-radius: 14px;
+    padding: 12px;
+    border: solid 2px;
+}
+
+label {
+    padding-left: 40px;
+}
+
+
+#user_email {
+    width: 300px;
+    margin-left: 75px;
+    padding-left: 60px;
+}
+
+#user_email:focus {
+    padding-left: 0px;
+    label: none;
+}
+
+
+#button-1 {
+    margin-left: 35px;
+    width: 100px;
+    border-radius: 14px;
+    padding: 12px;
+    border: solid 2px;
+    box-shadow: 2px 2px 25px whitesmoke;
+}

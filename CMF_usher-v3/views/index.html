@@ -1,0 +1,80 @@
+<!--THIS PAGE IS MORE THAN A LITTLE BIT TANGLED...
+
+It needs to be worked out:
+The default post that reloads the page has been disabled...
+but then the new post redirects to a page that has yet to be substantially created
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to CMF - Usher-person</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="public/stylesheets/index.css"/>
+
+
+</head>
+
+<body>
+
+<header>
+    <span>
+        COLORADO MUSIC FESTIVAL
+    </span>
+</header>
+
+<div class="outer container-fluid">
+
+    <form class=".form-horizontal" method="post" action="/user_form">
+
+        <div class="inner form-group">
+
+            <!--
+            WOULD LIKE TO HAVE VALUE DISAPPEAR WHEN FOCUS ON #COMMENT
+            WOULD ALSO LIKE TO HAVE BOX-SHADOW DISAPPEAR FROM ENTER BUTTON WHEN FOCUS ON #COMMENT
+            -->
+
+            <label for="user_email">Please log in here using your email?</label>
+            <input type="text" name="user_email" id="user_email" value="email@address.com">
+            <input type="submit" id="button-1" class="btn btn-default btn-lg" value="Enter">
+
+        </div>
+
+    </form>
+
+</div>
+
+<!--<p>-->
+
+
+    <!--<script language="JavaScript" type="text/javascript">-->
+        <!--$('#button-1').on('click', function(e) {-->
+
+            <!--e.preventDefault();-->
+            <!--console.log(e);-->
+
+            <!--var respVal = $('#comment').val();-->
+
+
+            <!--$.post("/", {comment: respVal}, function(data){-->
+                <!--console.log('gimmie', data);-->
+            <!--});-->
+
+        <!--});-->
+    <!--</script>-->
+<!--</p>-->
+</body>
+
+
+
+</html>

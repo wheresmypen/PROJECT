@@ -12,7 +12,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var form = require('./routes/form');
-var table =  require('./routes/table');
+var user_form = require('./routes/user_form');
+var submit_form = require('./routes/submit_form');
 
 var app = express();
 
@@ -32,8 +33,8 @@ app.use('/', routes);
 app.use('/form', form);
 app.use('/create', form);
 app.use('/users', users);
-app.use('/added', conf);
-app.use('/table', table);
+app.use('/user_form', user_form);
+app.use('/submit_form', submit_form);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

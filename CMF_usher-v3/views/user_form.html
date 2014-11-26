@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="/public/stylesheets/user_form.css">
+
+
+        <title>Input form</title>
+</head>
+
+  <body>
+    <header>
+        <span>
+            COLORADO MUSIC FESTIVAL
+        </span>
+    </header>
+
+    <div class="outer container-fluid">
+
+        <form class=".form-horizontal"><!--method="post" action="/user_form"-->
+
+            <div class="inner form-group">
+
+                <!--
+                WOULD LIKE TO HAVE VALUE DISAPPEAR WHEN FOCUS ON #COMMENT
+                WOULD ALSO LIKE TO HAVE BOX-SHADOW DISAPPEAR FROM ENTER BUTTON WHEN FOCUS ON #COMMENT
+                -->
+
+                <label for="user_email">Please log in here using your email?</label>
+                <input type="text" name="user_email" id="user_email" value="email@address.com">
+                <input id="button-2" class="btn btn-default btn-lg" value="Enter"> <!--type="submit"-->
+
+            </div>
+
+        </form>
+
+    </div>
+        <div id="mainContent">
+
+
+            <!-- This container is a form/body that posts to an added route ...
+            which directs to a confirmation page (conf.js) The submit button is at the bottom
+            Eventually, it ought to direct to a scheduling page based on log-in information-->
+
+
+            <form id="usherInfo" method="post" action="/user_form">
+                <fieldset>
+                    <legend>
+                        USHER INFORMATION
+                    </legend>
+
+                    <label for="email" class="toplabel">Email:</label>
+                    <input type="email" id="email" name="email" size="40" class = "info ident" maxlength="150"/>
+                    <!--This button is disabled, but it is supposed to function by routing to a .js file
+                    which searches the database and then populates the form area, like a log-in-->
+
+                        <span class="toggleContact"><label for="ToggleContact">Check here if you would prefer not to be contacted by CMF</label>
+                        <input type="checkbox" id="toggleContact" name="toggleContact"></span>
+
+                    <div class="spaceName">
+                        <div>
+                            <label for="lastname" class="toplabel">Last name:</label>
+                            <input type="text" id="lastname" name="lastname" size="30" class = "info name" maxlength="100"/>
+                        </div>
+                        <div>
+                            <label for="firstname" class="toplabel">First name:</label>
+                            <input type="text" id="firstname" name="firstname" size="30" class = "info name" maxlength="100"/>
+                        </div>
+                    </div>
+
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>
+                        MAILING ADDRESS
+                    </legend>
+
+                    <span class="outtatown"><label for="outtatown">Check here if outside of Colorado</label>
+                    <input type="checkbox" id="outtatown" name="outtatown"></span>
+
+                    <div>
+                        <label for="streetaddress" class="toplabel">Street address:</label>
+                        <input type="text" id="streetaddress" name="streetaddress" size="66" class = "info" maxlength="150"/>
+                    </div>
+
+                    <label for="cityaddress" class="toplabel">City:</label>
+                    <input type="text" id="cityaddress" name="cityaddress" size="20" class = "info" maxlength="100"/>
+
+                    <label for="zipaddress" class="toplabel">Mailing Code:</label>
+                    <input type="zip-code" id="zipaddress" name="zipaddress" size="20" class = "info" maxlength="100"/>
+
+                </fieldset>
+                <br>
+
+                <fieldset id="phone">
+
+                    <legend>
+                        TELEPHONE CONTACT
+                    </legend>
+                    <div>
+                        <div><strong>Select preferred method of contact:</strong>
+                            <select id="contactMethod" name="contactMethod">
+                                <option value="contactCell">Cell Phone</option>
+                                <option value="contactAltPhone">Alternate Phone</option>
+                                <option value="contactEmail">Via Email</option>
+                                <option value="contactMail">Via Postal Mail</option>
+                                <option value="contactNONE">Please do not contact me!</option>
+                            </select>
+                        </div>
+                    </div>
+                      <div class="phoneNo">
+                          <label for="cellNo" class="toplabel">Cell phone:</label>
+                          <input type="tel" id="cellNo" name="cellNo" size="30" class = "info" maxlength="100"/>
+                      </div>
+
+                      <div class="phoneNo">
+                          <label for="altPhone" class="toplabel">Alternate phone:</label>
+                          <input type="text" id="altPhone" name="altPhone" size="30" class = "info" maxlength="100"/>
+                      </div>
+                    <br>
+
+                </fieldset>
+            <div class="submitCase">
+                <button type="submit" id="submitInfo">CLICK HERE TO SUBMIT USHER INFORMATION</button>
+                <button type="reset" value="reset" id="submitClear">CLICK HERE TO CLEAR FORM</button>
+            </div>
+
+
+          </form>
+      </div>
+  </body>
+
+<script src="public/javascripts/user_form_front.js"></script>
+
+</html>
