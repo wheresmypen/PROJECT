@@ -19,9 +19,13 @@ $(function(){
 //            gets the object returned from the form.js search
             success: function(getback) {
 
-                console.log('retrieved');
+                console.log(getback);
 
-                if (getback == '{firstname: "false return"}'){
+                var check = {firstname: "false return"};
+                console.log(check.firstname === getback.firstname);
+
+
+                if (getback.firstname && getback.firstname === "false return"){
                     console.log(getback);
                     window.location.href = '/user_form';
                 }
