@@ -3,14 +3,24 @@ var router = express.Router();
 var mongoose = require( 'mongoose' );
 var Comment = mongoose.model('Comment');
 
+
+
 /* GET form. */
 router.get('/', function(req, res) {
-    Comment.find(function(err, comments){
+
+    console.log('Vaboom!');
+//    console.log(req);
+//
+//    res.render('layout');
+
+    res.render('user_form');
+
+/*    Comment.find(function(err, comments){
         res.render(
             'user_form',
             {comments : comments}
         );
-    });
+    });*/
 });
 
 

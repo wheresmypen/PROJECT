@@ -4,7 +4,7 @@ body {
 
 .outer {
     width: 1000px;
-    padding-top: 200px;
+    padding-top: 25px;
 }
 
 
@@ -47,4 +47,16 @@ label {
     padding: 12px;
     border: solid 2px;
     box-shadow: 2px 2px 25px whitesmoke;
+}
+
+#formContent {
+    padding: 25px;
+    margin: 0 auto;
+    margin-top: -34px;
+    background-color: white;
+    border: 2px black solid;
+    border-top: none;
+    display: none;
+    width: 633px;
+    position: relative;
 }

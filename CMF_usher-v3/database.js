@@ -2,16 +2,16 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var Comment = new Schema({
+    toggleContact: Boolean,
     email : String,
     lastname : String,
     firstname: String,
-    outtatown: Boolean,
-    streetaddress: String,
-    cityaddress: String,
-    zipaddress: Number,
+    outtaTown: Boolean,
+    streetAddress: String,
+    cityAddress: String,
+    zipAddress: Number,
     cellNo: Number,
     altPhone: Number,
-    toggleContact: String,
     positions: Array,
     dates: Array
 });

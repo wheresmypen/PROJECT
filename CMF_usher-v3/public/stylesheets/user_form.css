@@ -64,3 +64,11 @@ body {
 legend {
     text-align: center;
 }
+
+.std{
+    width: 115px;
+}
+
+#submitInfo{
+    margin-left: 5px;
+}

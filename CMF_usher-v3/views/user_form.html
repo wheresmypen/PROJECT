@@ -61,24 +61,25 @@
                         USHER INFORMATION
                     </legend>
 
-                    <label for="email" class="toplabel">Email:</label>
+                    <label for="email" class="toplabel std">Email:</label>
                     <input type="email" id="email" name="email" size="40" class = "info ident" maxlength="150"/>
                     <!--This button is disabled, but it is supposed to function by routing to a .js file
                     which searches the database and then populates the form area, like a log-in-->
+                    <div class="spaceName">
+                        <div>
+                            <label for="lastname" class="toplabel std">Last name:</label>
+                            <input type="text" id="lastname" name="lastname" size="30" class = "info name" maxlength="100"/>
+                        </div>
+                        <div>
+                            <label for="firstname" class="toplabel std">First name:</label>
+                            <input type="text" id="firstname" name="firstname" size="30" class = "info name" maxlength="100"/>
+                        </div>
+                    </div>
 
                         <span class="toggleContact"><label for="ToggleContact">Check here if you would prefer not to be contacted by CMF</label>
                         <input type="checkbox" id="toggleContact" name="toggleContact"></span>
 
-                    <div class="spaceName">
-                        <div>
-                            <label for="lastname" class="toplabel">Last name:</label>
-                            <input type="text" id="lastname" name="lastname" size="30" class = "info name" maxlength="100"/>
-                        </div>
-                        <div>
-                            <label for="firstname" class="toplabel">First name:</label>
-                            <input type="text" id="firstname" name="firstname" size="30" class = "info name" maxlength="100"/>
-                        </div>
-                    </div>
+
 
                 </fieldset>
                 <br>
@@ -91,15 +92,15 @@
                     <input type="checkbox" id="outtatown" name="outtatown"></span>
 
                     <div>
-                        <label for="streetaddress" class="toplabel">Street address:</label>
-                        <input type="text" id="streetaddress" name="streetaddress" size="66" class = "info" maxlength="150"/>
+                        <label for="streetaddress" class="toplabel std">Street address:</label>
+                        <input type="text" id="streetAddress" name="streetAddress" size="66" class = "info" maxlength="150"/>
                     </div>
 
-                    <label for="cityaddress" class="toplabel">City:</label>
-                    <input type="text" id="cityaddress" name="cityaddress" size="20" class = "info" maxlength="100"/>
+                    <label for="cityaddress" class="toplabel std">City:</label>
+                    <input type="text" id="cityAddress" name="cityAddress" size="20" class = "info" maxlength="100"/>
 
-                    <label for="zipaddress" class="toplabel">Mailing Code:</label>
-                    <input type="zip-code" id="zipaddress" name="zipaddress" size="20" class = "info" maxlength="100"/>
+                    <label for="zipaddress" class="toplabel std" style = 'margin-left: 10px'>Mailing Code:</label>
+                    <input type="zip-code" id="zipAddress" name="zipAddress" size="20" class = "info" maxlength="100"/>
 
                 </fieldset>
                 <br>
@@ -109,32 +110,35 @@
                     <legend>
                         TELEPHONE CONTACT
                     </legend>
-                    <div>
-                        <div><strong>Select preferred method of contact:</strong>
-                            <select id="contactMethod" name="contactMethod">
-                                <option value="contactCell">Cell Phone</option>
-                                <option value="contactAltPhone">Alternate Phone</option>
-                                <option value="contactEmail">Via Email</option>
-                                <option value="contactMail">Via Postal Mail</option>
-                                <option value="contactNONE">Please do not contact me!</option>
-                            </select>
-                        </div>
-                    </div>
                       <div class="phoneNo">
-                          <label for="cellNo" class="toplabel">Cell phone:</label>
-                          <input type="tel" id="cellNo" name="cellNo" size="30" class = "info" maxlength="100"/>
-                      </div>
+                          <label for="cellNo" class="toplabel std">Cell phone:</label>
+                          <input type="tel" id="cellNo" name="cellNo" size="20" class = "info" maxlength="50"/>
 
-                      <div class="phoneNo">
-                          <label for="altPhone" class="toplabel">Alternate phone:</label>
-                          <input type="text" id="altPhone" name="altPhone" size="30" class = "info" maxlength="100"/>
+                      <span class="phoneNo">
+                          <label for="altPhone" class="toplabel std" style = "margin-left: 10px">Alternate phone:</label>
+                          <input type="text" id="altPhone" name="altPhone" size="20" class = "info" maxlength="50"/>
+                      </span>
                       </div>
                     <br>
 
                 </fieldset>
+                <div>
+                    <div><strong>Select preferred method of contact:</strong>
+                        <select id="contactMethod" name="contactMethod">
+                            <option value="contactCell">Cell Phone</option>
+                            <option value="contactAltPhone">Alternate Phone</option>
+                            <option value="contactEmail">Via Email</option>
+                            <option value="contactMail">Via Postal Mail</option>
+                            <option value="contactNONE">Please do not contact me!</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
             <div class="submitCase">
-                <button type="submit" id="submitInfo">CLICK HERE TO SUBMIT USHER INFORMATION</button>
-                <button type="reset" value="reset" id="submitClear">CLICK HERE TO CLEAR FORM</button>
+
+                <button type="reset" value="reset" id="submitClear" class="btn btn-info">CLICK HERE TO CLEAR FORM</button>
+                <button type="submit" id="submitInfo" class="btn btn-primary">CLICK HERE TO SUBMIT USHER INFORMATION</button>
+
             </div>
 
 
