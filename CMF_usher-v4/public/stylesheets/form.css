@@ -1,0 +1,93 @@
+body{
+    background-image: url("/images/seamless_paper_texture.png");
+    margin: 15px;
+}
+
+
+header{
+    background-image: url("/images/music_notes.png");
+    background-color: lightgoldenrodyellow;
+    background-repeat: no-repeat;
+    border-radius: 90px;
+    width: 100%;
+    height: 180px;
+    top: 0;
+    left: 0;
+}
+
+.navBar{
+    float: left;
+    background-image: url("/images/piano-vert.jpeg");
+    -webkit-border-top-left-radius: 25px;
+    -webkit-border-top-right-radius: 25px;
+    background-size: 225px 608px;
+    background-repeat: no-repeat;
+    background-color: lightgray;
+    position: relative;
+    height: 608px;
+    width: 225px;
+}
+
+#mainContent{
+    margin-left: 235px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+legend {
+    text-align: center;
+}
+
+.spaceName{
+    text-align: center;
+}
+
+.outtatown{
+    float: right;
+}
+
+.toplabel{
+    display: block;
+    margin:auto;
+    width:66%;
+}
+
+.info {
+    margin:auto;
+    width:45%;
+}
+
+fieldset{
+    padding-left: 50px;
+    width: 90%;
+}
+
+fieldset span{
+    display: inline-block;
+    width: 48%;
+}
+
+#gotoForm, #exitUser{
+    color: darkred;
+    font-size: 20px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 15px;
+    margin-top: 8px;
+}
+
+.submitCase{
+    /*text-align: center;*/
+}
+
+#exitUser{
+    float: right;
+}
+
+
+footer{
+    text-align: center;
+    background-color: darkred;
+    height: 35px;
+    font-size: 28px;
+}
