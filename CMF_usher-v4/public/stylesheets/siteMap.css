@@ -1,0 +1,101 @@
+body {
+    background-image: url("/images/seamless_paper_texture.png");
+    margin: 15px;
+}
+
+#topBox {text-align: right;
+    border-bottom: 1px black solid;
+}
+
+#topWords {
+    text-align: center;
+    outline: 9px black solid;
+    padding: 10px;
+}
+
+.lower {
+    position: relative;
+}
+
+.noShow {
+    visibility: hidden;
+}
+
+.bottomWords > span {
+    margin: 25px;
+    outline: 3px black solid;
+    padding: 0px 25px;
+    text-align: center;
+    min-height: 38px;
+}
+
+/*
+
+GLYPHICONS FOR LAYOUT
+
+*/
+
+hr{
+    display: block; height: 1px;
+    border: 0; border-top: 1px solid black;
+    margin: 1em 0; padding: 0;
+}
+
+#vert1 {
+    position: absolute;
+    font-size: 45px;
+    left: 28%;
+    top: 100px;
+}
+
+#vert2 {
+    position: absolute;
+    font-size: 45px;
+    left: 28%;
+    top: 200px;
+}
+
+#bridgeOver {
+    position: absolute;
+}
+
+#bendWays{
+    position: absolute;
+    left: 28%;
+    top: 40px;
+}
+
+#sideWays {
+    position: absolute;
+    left: 45%;
+    top: -4px;
+}
+
+#crossWays {
+    position: absolute;
+    left: 50%;
+    top: 82px;
+}
+
+#down1 {
+    position: absolute;
+    left: 82%;
+    top: 82px;
+}
+
+#down2 {
+     position: absolute;
+     left: 60%;
+     top: 170px;
+}
+#down3 {
+      position: absolute;
+      left: 82%;
+      top: 170px;
+  }
+
+#down4 {
+    position: absolute;
+    left: 82%;
+    top: 255px;
+}

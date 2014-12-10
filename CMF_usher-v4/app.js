@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var siteMap = require('./routes/siteMap');
+var startPage = require('./routes/startPage');
+var fullSchedule = require('./routes/fullSchedule');
+var optionsProfile = require('./routes/optionsProfile');
 
 var app = express();
 
@@ -24,6 +28,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/siteMap', siteMap);
+app.use('/startPage', startPage);
+app.use('/fullSchedule', fullSchedule);
+app.use('/optionsProfile', optionsProfile);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
