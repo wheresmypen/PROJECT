@@ -61,6 +61,7 @@ legend {
 fieldset{
     padding-left: 50px;
     width: 90%;
+    outline: solid black 1px;
 }
 
 fieldset span{

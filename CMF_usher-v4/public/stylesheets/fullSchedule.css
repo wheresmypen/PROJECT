@@ -1,0 +1,15 @@
+body {
+    background-image: url("/images/seamless_paper_texture.png");
+    padding: 25px;
+}
+
+.colorKey {
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+
+.colorKey > p {
+    height: 36px;
+    outline: black 1px solid
+}

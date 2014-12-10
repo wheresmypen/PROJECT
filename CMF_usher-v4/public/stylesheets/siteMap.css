@@ -1,6 +1,6 @@
 body {
     background-image: url("/images/seamless_paper_texture.png");
-    margin: 15px;
+    padding: 10px;
 }
 
 #topBox {text-align: right;

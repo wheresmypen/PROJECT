@@ -2,12 +2,58 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stylesheets/form.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/fullSchedule.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
     <title>Input form</title>
+
   </head>
   <body>
     <h2>Here lies a list of the upcoming CMF shows</h2>
-    <a href="http://localhost:3000/" id="fullScheduleReturn">Return</button>
+    <a href="http://localhost:3000/" id="fullScheduleReturn">Return</a>
+
+    <table class="table table-condensed">
+      <thead>
+        <tr><!--class="success" #dff0d8-->
+          <th class="schDate">DATE</th>
+          <th class="schTime">TIME</th>
+          <th  class="schEvent">EVENT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="active"> <!--#f5f5f5-->
+            <td class="schDate upcoming">June 15th</td>
+            <td class="schTime">6:00 PM</td>
+            <td class="schEvent">Prokofiev - Peter and the Wolf</td>
+        </tr>
+        <tr class="warning"> <!--#fcf8e3-->
+            <td class="schDate">July 16th</td>
+            <td class="schTime">7:00 PM</td>
+            <td class="schEvent">Gangsta - Hip-Hop Dance Jam</td>
+        </tr>
+        <tr class="danger"> <!--#f2dede-->
+            <td class="schDate">August 17th</td>
+            <td class="schTime">8:00 PM</td>
+            <td class="schEvent">Windham Hill - Seasonal Jazz</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="text-align: center">------KEY TO SCHEDULE ASSIGNMENTS------</div>
+    <div class="colorKey">
+        <p class="bg-active">NEXT SCHEDULED EVENT</p><br>
+        <p class="bg-success">YOU ARE SCHEDULED FOR THIS EVENT</p><br>
+        <p class="bg-warning">THIS EVENT STILL HAS OPENINGS</p><br>
+        <p class="bg-danger">THIS EVENT DOES NOT NEED ANY MORE USHERS</p><br>
+    </div>
   </body>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </html>
