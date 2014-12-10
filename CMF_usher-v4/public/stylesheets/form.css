@@ -68,7 +68,7 @@ fieldset span{
     width: 48%;
 }
 
-#gotoForm, #exitUser{
+#startPage, #exitUser, #optionsProfile, #siteMap, #fullSchedule {
     color: darkred;
     font-size: 20px;
     background-color: lightgoldenrodyellow;
