@@ -1,24 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8">
-
+<head>
+    <title>Welcome to CMF - Usher-person</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
 
-    <link rel="stylesheet" href="/stylesheets/startPage.css">
-
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-    <title>Input form</title>
-  </head>
+    <link rel="stylesheet" href="../stylesheets/startPage.css"/>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+
+</head>
   <body>
-    <h2>Log-in here</h2>
+  <header>
+            <span>
+                COLORADO MUSIC FESTIVAL
+            </span>
+  </header>
+
+
+  <div class="outer container-fluid">
+
+      <form class="form-horizontal"> <!--method="get" action="/"-->
+
+          <div class="inner form-group">
+
+              <!--
+              WOULD LIKE TO HAVE VALUE DISAPPEAR WHEN FOCUS ON #COMMENT
+              WOULD ALSO LIKE TO HAVE BOX-SHADOW DISAPPEAR FROM ENTER BUTTON WHEN FOCUS ON #COMMENT
+              -->
+
+              <!--This button is disabled, but it is supposed to function by routing to a .js file
+              which searches the database and then populates the form area, like a log-in-->
+              <!--THE AJAX CALL WILL PASS THE EMAIL VALUE TO BE USED IN A SEARCH
+                  OF THE DATABASE FOR AN OBJECT WITH THAT KEY-VALUE PAIR-->
+
+              <label for="user_email">Please log in here using your email:</label>
+              <input type="text" name="user_email" id="user_email" value="email@address.com">
+              <input type="enter" id="button-login" class="btn btn-default btn-lg" value="Enter">
+
+          </div>
+
+      </form>
+
+  </div>
+
+  <!--<script type="text/template" id="formTemplate">-->
+  <div id="mainContent">
+      <form id="usherInfo" method="get" action="/user_form">
+          <fieldset>
+              <legend>
+                  USHER INFORMATION
+              </legend>
+
+              <label for="email" class="toplabel std">Email:</label>
+              <input type="email" id="email" name="email" size="40" class = "info ident" maxlength="150"/>
+              <div class="spaceName">
+                  <div>
+                      <label for="lastname" class="toplabel std">Last name:</label>
+                      <input type="text" id="lastname" name="lastname" size="30" class = "info name" maxlength="100"/>
+                  </div>
+                  <div>
+                      <label for="firstname" class="toplabel std">First name:</label>
+                      <input type="text" id="firstname" name="firstname" size="30" class = "info name" maxlength="100"/>
+                  </div>
+              </div>
+
+                        <span class="toggleContact"><label for="ToggleContact">Check here if you would prefer not to be contacted by CMF</label>
+                        <input type="checkbox" id="toggleContact" name="toggleContact"></span>
+          </fieldset>
+
+          <fieldset id="phone">
+
+              <legend>
+                  TELEPHONE CONTACT
+              </legend>
+              <div class="phoneNo">
+                  <label for="cellNo" class="toplabel std">Cell phone:</label>
+                  <input type="tel" id="cellNo" name="cellNo" size="20" class = "info" maxlength="50"/>
+
+                      <span class="phoneNo">
+                          <label for="altPhone" class="toplabel std" style = "margin-left: 10px">Alternate phone:</label>
+                          <input type="text" id="altPhone" name="altPhone" size="20" class = "info" maxlength="50"/>
+                      </span>
+              </div>
+              <br>
+
+              <div>
+                  <div><strong>Select preferred method of contact:</strong>
+                      <select id="contactMethod" name="contactMethod">
+                          <option value="contactCell">Cell Phone</option>
+                          <option value="contactAltPhone">Alternate Phone</option>
+                          <option value="contactEmail">Via Email</option>
+                          <option value="contactMail">Via Postal Mail</option>
+                          <option value="contactNONE">Please do not contact me!</option>
+                      </select>
+                  </div>
+              </div>
+              <br>
+              <div class="submitCase">
+
+                  <button type="reset" value="reset" id="submitClear" class="btn btn-info">CLICK HERE TO CLEAR FORM</button>
+                  <button type="submit" id="submitInfo" class="btn btn-primary">CLICK HERE TO SUBMIT USHER INFORMATION</button>
+
+              </div>
+
+
+          </fieldset>
+      </form>
+  </div>
+<!-- </script>-->
+
     <a href="http://localhost:3000/" id="startPageReturn">Return</button>
   </body>
+
+<script src="/javascripts/startPage_front.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </html>

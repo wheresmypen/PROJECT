@@ -2,3 +2,100 @@ body{
     background-image: url("/images/seamless_paper_texture.png");
     padding: 25px;
 }
+
+.outer {
+    width: 1000px;
+    padding-top: 25px;
+}
+
+.inner {
+    background-color: lightcoral;
+    padding: 30px 20px 30px 25px;
+    font-size: 24px;
+    border-radius: 14px;
+    box-shadow: 5px 5px 5px #888888;
+    z-index: 10;
+    position: absolute;
+}
+
+
+.none {
+    width: 100px;
+    border-radius: 14px;
+    padding: 12px;
+    border: solid 2px;
+}
+
+.inner label {
+    font-size: 24px;
+    padding-left: 40px;
+}
+
+
+#user_email {
+    width: 300px;
+    margin-left: 50px;
+    padding-left: 60px;
+}
+
+#user_email:focus {
+    padding-left: 0px;
+    label: none;
+}
+
+
+#button-login {
+    margin-left: 32px;
+    width: 100px;
+    border-radius: 14px;
+    padding: 12px;
+    border: solid 2px;
+    box-shadow: 2px 2px 25px whitesmoke;
+}
+
+#mainContent {
+    padding: 25px;
+    margin: 0 auto;
+    z-index: 1;
+    margin-top: 110px;
+    background-color: white;
+    border: 2px black solid;
+    border-top: none;
+    display: none;
+    width: 633px;
+    position: relative;
+}
+
+#formContent {
+    padding: 25px;
+    margin: 0 auto;
+    margin-top: -34px;
+    background-color: white;
+    border: 2px black solid;
+    border-top: none;
+    display: none;
+    width: 633px;
+    position: relative;
+}
+
+#user_email {
+    width: 300px;
+    margin-left: 50px;
+    padding-left: 60px;
+}
+
+#user_email:focus {
+    padding-left: 0px;
+}
+
+legend {
+    text-align: center;
+}
+
+.std{
+    width: 115px;
+}
+
+#submitInfo{
+    margin-left: 5px;
+}

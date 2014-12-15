@@ -1,3 +1,7 @@
+
+// mongoose config
+require('./database');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -9,6 +13,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var siteMap = require('./routes/siteMap');
 var startPage = require('./routes/startPage');
+var submit_form = require('./routes/submit_form');
 var fullSchedule = require('./routes/fullSchedule');
 var optionsProfile = require('./routes/optionsProfile');
 
@@ -32,6 +37,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/siteMap', siteMap);
 app.use('/startPage', startPage);
+app.use('/submit_form', submit_form);
 app.use('/fullSchedule', fullSchedule);
 app.use('/optionsProfile', optionsProfile);
 
