@@ -13,3 +13,19 @@ body {
     height: 36px;
     outline: black 1px solid
 }
+
+tr {
+    height: 50px;
+}
+
+thead {
+    border: solid red;
+}
+
+thead th {
+    text-align: center;
+}
+
+td {
+    border: solid black 2px;
+}

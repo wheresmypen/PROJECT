@@ -4,7 +4,7 @@ $(function(){
 
     $(".form-horizontal").submit(function(e){
 //        PREVENTS THE DOCUMENT REDIRECT TO USER_FORM
-        e.preventDefault();
+//        e.preventDefault();
 
         console.log($('#user_email').val()+"/////");
 

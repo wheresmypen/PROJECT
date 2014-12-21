@@ -7,4 +7,8 @@ router.get('/', function(req, res) {
     res.render('../views/optionsProfile');
 });
 
+router.post('/', function(req, res) {
+    console.log('OPTIONS');
+})
+
 module.exports = router;

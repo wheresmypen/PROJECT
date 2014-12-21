@@ -41,11 +41,11 @@
               which searches the database and then populates the form area, like a log-in-->
               <!--THE AJAX CALL WILL PASS THE EMAIL VALUE TO BE USED IN A SEARCH
                   OF THE DATABASE FOR AN OBJECT WITH THAT KEY-VALUE PAIR-->
-
+          <form>
               <label for="user_email">Please log in here using your email:</label>
               <input type="text" name="user_email" id="user_email" value="email@address.com">
-              <input type="enter" id="button-login" class="btn btn-default btn-lg" value="Enter">
-
+              <button type="submit" id="button-login" class="btn btn-default btn-lg" value="Enter">Log-in</button>
+          </form>
           </div>
 
       </form>
@@ -54,7 +54,7 @@
 
   <!--<script type="text/template" id="formTemplate">-->
   <div id="mainContent">
-      <form id="usherInfo" method="get" action="/user_form">
+      <form id="usherInfo"><!--method="get" action="/user_form"-->
           <fieldset>
               <legend>
                   USHER INFORMATION
@@ -107,8 +107,9 @@
               <br>
               <div class="submitCase">
 
-                  <button type="reset" value="reset" id="submitClear" class="btn btn-info">CLICK HERE TO CLEAR FORM</button>
                   <button type="submit" id="submitInfo" class="btn btn-primary">CLICK HERE TO SUBMIT USHER INFORMATION</button>
+                  <button type="reset" value="reset" id="submitClear" class="btn btn-info">CLICK HERE TO CLEAR FORM</button>
+
 
               </div>
 

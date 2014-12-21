@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
+<head lang="en">
     <meta charset="UTF-8">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
-
-    <link rel="stylesheet" href="/stylesheets/optionsProfile.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></script>
@@ -14,11 +12,72 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-    <title>Input form</title>
-  </head>
-  <body>
-    <h2>And if you want to select where you will work, etc.</h2>
-    <a href="http://localhost:3000/" id="optionsProfileReturn">Return</button>
-  </body>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/optionsProfile.css">
+
+    <title>Main page</title>
+</head>
+<body>
+<header>
+    <div>COLORADO MUSIC FESTIVAL</div>
+</header>
+<div class = "navBar">NAVIGATION KEYS</div>
+<div id="mainContent">
+    <form id="usherInfo" method="post" action="/optionsProfile">
+        <fieldset>
+            <legend>Locations</legend>
+            <div class="row">
+                <div class="col-md-4 dropMenu">
+                    <select multiple class="form-control dropMenu" id="options1">
+                        <option>North</option>
+                        <option>East</option>
+                        <option>South</option>
+                        <option>Captain</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">
+                            Option one is this and that
+                        </label>
+                        <label>
+                            <input type="checkbox" value="">
+                            Option two is disabled
+                        </label>
+                    </div>
+                    <span>INSTRUCTIONS AND STUFF</span>
+                    <select multiple class="form-control dropMenu" id="options2">
+                        <option>Refreshments</option>
+                        <option>Transportation</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    MORE INSTRUCTIONS TO SPAN ACROSS THE SECONDARY OPTIONS
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">
+                            Willing to be added as substitute
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-2">Yummy enticements</div>
+                <div class="col-md-4">There's really only more instructions to be added here</div>
+            </div>
+        </fieldset>
+        <br>
+            <div class="submitCase">
+                <button type="submit" id="startPage">SELECT PROFILE OPTIONS</button>
+                <button type="button" id="exitUser">LOG-OUT</button>
+            </div>
+    </form>
+    <footer>MORE SPACE FILLING TEXT</footer>
+</body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/options_front.js"></script>
 </html>

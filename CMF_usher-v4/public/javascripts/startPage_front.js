@@ -1,18 +1,36 @@
 $(function() {
 
 
-    $('#button-login').click(function(){
+    console.log('reload');
+
+    $('#button-login').click(function(e){
+        e.preventDefault();
+
+        var input_flag = $('#user_email').val();
+        //// OK
+        ////
+
+        /*NOW YOU HAVE THE FORM SUBMISSION FOR THE LOG-IN
+        * BUT YOU ALSO NEED TO SET UP AN AJAX ROUTE TO CHECK AGAINST THE DATABASE*/
+
+
+        $.ajax({
+            type: "POST",
+            url: '/check_login',
+            data: {"email": input_flag},
+            success: function(returnedFlag){
+                console.log(returnedFlag+"========");
+                /*window.location.href = 'http://localhost:3000/'*/
+            }
+        });
+
         $('#mainContent').slideDown();
         console.log('form is here');
     });
 
 
 
-    function makereal(){
-        $(document.body).on('click', '#submitClear', unreal);
-    };
-
-    makereal();
+    $(document.body).on('click', '#submitInfo', unreal);
 
     function unreal(){
 
@@ -44,7 +62,10 @@ $(function() {
                 ,    "zipAddress": zipAddress
                 ,    "contactMethod": contactMethod
                 ,    "cellNo": cellNo
-                ,    "altPhone": altPhone}
+                ,    "altPhone": altPhone},
+            success: function(returnedFlag){
+                window.location.href = 'http://localhost:3000/'
+            }
         });
 
 
@@ -52,8 +73,7 @@ $(function() {
 
 
     };
-
-
+    console.log('blue');
 
 
 });

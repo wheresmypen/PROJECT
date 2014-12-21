@@ -34,13 +34,12 @@ body{
 
 #user_email {
     width: 300px;
+    padding-left: 40px;
     margin-left: 50px;
-    padding-left: 60px;
 }
 
 #user_email:focus {
     padding-left: 0px;
-    label: none;
 }
 
 
@@ -76,16 +75,6 @@ body{
     display: none;
     width: 633px;
     position: relative;
-}
-
-#user_email {
-    width: 300px;
-    margin-left: 50px;
-    padding-left: 60px;
-}
-
-#user_email:focus {
-    padding-left: 0px;
 }
 
 legend {

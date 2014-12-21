@@ -14,7 +14,9 @@ var users = require('./routes/users');
 var siteMap = require('./routes/siteMap');
 var startPage = require('./routes/startPage');
 var submit_form = require('./routes/submit_form');
+var check_login = require('./routes/check_login');
 var fullSchedule = require('./routes/fullSchedule');
+var selectEvent = require('./routes/selectEvent');
 var optionsProfile = require('./routes/optionsProfile');
 
 var app = express();
@@ -38,7 +40,9 @@ app.use('/users', users);
 app.use('/siteMap', siteMap);
 app.use('/startPage', startPage);
 app.use('/submit_form', submit_form);
+app.use('/check_login', check_login);
 app.use('/fullSchedule', fullSchedule);
+app.use('/selectEvent', selectEvent);
 app.use('/optionsProfile', optionsProfile);
 
 /// catch 404 and forward to error handler

@@ -2,3 +2,27 @@ body{
     background-image: url("/images/seamless_paper_texture.png");
     padding: 25px;
 }
+
+.navBar{
+    float: left;
+    background-image: url("/images/piano-vert.jpeg");
+    -webkit-border-top-left-radius: 25px;
+    -webkit-border-top-right-radius: 25px;
+    background-size: 225px 608px;
+    background-repeat: no-repeat;
+    background-color: lightgray;
+    height: 608px;
+    width: 225px;
+}
+
+.row{
+    height: 180px;
+}
+
+#options1{
+    height: 108px;
+}
+
+#options2{
+    height: 48px;
+}
