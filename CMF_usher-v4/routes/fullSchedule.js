@@ -18,28 +18,29 @@ router.post('/', function(req, res) {
 
     console.log(dummy);
 
-    Comment.find({ email : login_id}, function(err, comments) {
-        console.log(comments+"hjhjhjhj");
+    Comment.find({ email : login_id}, function(err, dummy) {
+        console.log(dummy);
 
-        if (comments.length > 0) {
+        if (dummy.length > 0) {
             console.log("LOGGED-IN");
-            console.log(comments[0] + "%%%%%%");
-            comments = comments[0];
-            console.log(comments+'+++++');
-            newday(comments);
+            dummy = dummy[0];
+            console.log(dummy+'+++++');
+            newday(dummy);
 //            res.send({email: 'goober'});
         }
 
         else {
             console.log("does not exist");
             console.log(dummy);
-            res.send({email: 'schnaka'});
+            res.send({});
         }
     });
 
+    console.log(dummy);
+
     function newday(returnObj) {
 
-        console.log(dummy.email);
+        console.log(returnObj.email);
 
         if (dummy.email === "false return") {
             console.log("false--------");

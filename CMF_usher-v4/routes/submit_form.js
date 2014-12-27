@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 //
 //    res.render('layout');
 
-    res.render('user_form');
+    res.render('index');
 
     /*    Comment.find(function(err, comments){
      res.render(
@@ -53,7 +53,7 @@ router.post('/', function(req, res) {
             comments = comments[0];
             console.log(comments+'+++++');
 //            res.send(comments);
-            window.location.href = 'http://localhost:3000/siteMap'
+//            window.location.href = 'http://localhost:3000/siteMap'
         }
 
         else {

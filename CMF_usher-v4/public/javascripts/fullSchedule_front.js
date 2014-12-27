@@ -13,6 +13,7 @@ $(function(){
 
     $('#submitUsher').on('click', function(){
         returnedFlag = grabUsher();
+        console.log(returnedFlag);
     });
 
     function grabUsher(){
@@ -24,25 +25,67 @@ $(function(){
             data: {"email": email_flag},
             success: function(returnedFlag){
                 console.log(returnedFlag);
-                compileUsher();
+                compileUsher(returnedFlag);
                 /*window.location.href = 'http://localhost:3000/'*/
             }
 
+
+
         });
+
+        $('#concert3').on('click', function(){
+            console.log('third');
+        });
+
         return email_flag;
+
+
     };
 
-    function compileUsher(){
+    function compileUsher(returnedFlag){
 
-        if (returnedFlag === "d.james.obrien@gmail.com")
+        console.log(returnedFlag);
 
-        console.log("other options");
+//        if returnedFlag is not empty (need to pass whole object)
+//        then run some options with the button clicked BUTTON 1 eg.
+//        which are not available without the confirmation email added
+//
+//        if returnedFlag is empty then the buttons remain disabled or
+//        redirect to the log-in screen (later the log-in screen will actually
+//        pass the session cookie to the page and tell if the person is logged-in
+
+        if (returnedFlag.email) {
+            console.log(returnedFlag);
+            console.log('+++++');
+//            newday(dummy);
+//            res.send({email: 'goober'});
+
+            $.ajax({
+                type: "POST",
+                url: '/submit_form',
+                data: returnedFlag,
+                success: function(e){
+                    console.log(e);
+                }
+
+
+
+            });
+        }
+
+        else {
+            console.log("does not exist");
+            console.log(returnedFlag);
+        }
+
+
 
     }
 
+//  BUTTON 1
 
     $('#concert1').on('click', function(){
-      console.log('first');
+      console.log(returnedFlag);
 
         $.ajax({
             type: "POST",
@@ -55,6 +98,8 @@ $(function(){
         });
 
     });
+
+//    BUTTON 2
 
     $('#concert2').on('click', function(){
         console.log('first');
@@ -71,10 +116,6 @@ $(function(){
 
     });
 
-
-    $('#concert3').on('click', function(){
-        console.log('third');
-    });
 
 
 })
