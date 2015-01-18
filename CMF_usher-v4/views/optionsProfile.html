@@ -26,7 +26,7 @@
 <div class = "navBar">NAVIGATION KEYS</div>
 <div id="mainContent">
 
-    <form id="login_form" action="/submit_form" method="post" onsubmit="confirmForm()">
+    <form id="login_form" action="/secureOptions" method="post" onsubmit="confirmForm()">
         <label for="email_login" class="toplabel std">Email look-up:</label>
         <input type="email" id="email_login" name="email-id" size="30" maxlength="100"/>
         <button type="submit" id="submitUsher">ENTER</button>
@@ -39,7 +39,7 @@
     </script>
 
 
-    <form id="usherInfo" method="post" action="/optionsProfile">
+    <form id="usherInfo" action="/optionsProfile" method="post">
         <fieldset>
             <legend>Locations</legend>
             <div class="row">

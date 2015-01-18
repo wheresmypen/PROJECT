@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
 
         else {
             console.log("does not exist");
-            console.log(dummy);
+            console.log('dummy');
             flag="new";
 //            res.send(dummy);
 //            return res.redirect('/siteMap');

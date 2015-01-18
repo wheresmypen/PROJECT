@@ -18,6 +18,7 @@ var check_login = require('./routes/check_login');
 var fullSchedule = require('./routes/fullSchedule');
 var selectEvent = require('./routes/selectEvent');
 var optionsProfile = require('./routes/optionsProfile');
+var secureOptions = require('./routes/secureOptions');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/check_login', check_login);
 app.use('/fullSchedule', fullSchedule);
 app.use('/selectEvent', selectEvent);
 app.use('/optionsProfile', optionsProfile);
+app.use('/secureOptions', secureOptions);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
