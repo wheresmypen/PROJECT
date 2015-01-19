@@ -24,7 +24,6 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname + '/views'));
-// app.set('view engine', 'jade');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -34,7 +33,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);

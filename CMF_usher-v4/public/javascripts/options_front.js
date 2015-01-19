@@ -6,12 +6,4 @@ $(function(){
     }
 
 
-
-/*    $(#login_form).onSubmit(){
-        console.log('TREASON');
-    };*/
-
-
-
-
 });

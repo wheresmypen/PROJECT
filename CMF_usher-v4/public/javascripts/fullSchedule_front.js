@@ -93,7 +93,7 @@ $(function(){
             data: {"show": 1, "email": "something"},
             success: function(garbage){
                 console.log("garbage========");
-                /*window.location.href = 'http://localhost:3000/'*/
+
             }
         });
 
@@ -110,8 +110,8 @@ $(function(){
             data: {"email": "something"},
             success: function(garbage){
                 console.log(garbage+"========");
-                /*window.location.href = 'http://localhost:3000/'*/
-            }
+
+             }
         });
 
     });

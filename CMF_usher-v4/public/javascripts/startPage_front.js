@@ -1,32 +1,50 @@
 $(function() {
 
+    var returnedFlag="";
 
-    console.log('reload');
 
-    $('#button-login').click(function(e){
+    $('#button-login').click(function(e) {
         e.preventDefault();
 
         var input_flag = $('#user_email').val();
-        //// OK
-        ////
-
-        /*NOW YOU HAVE THE FORM SUBMISSION FOR THE LOG-IN
-        * BUT YOU ALSO NEED TO SET UP AN AJAX ROUTE TO CHECK AGAINST THE DATABASE*/
 
 
-        $.ajax({
-            type: "POST",
-            url: '/check_login',
-            data: {"email": input_flag},
-            success: function(returnedFlag){
-                console.log(returnedFlag+"========");
-                /*window.location.href = 'http://localhost:3000/'*/
-            }
-        });
+//        YOU ALSO NEED TO SET UP AN AJAX ROUTE TO CHECK AGAINST THE DATABASE
 
-        $('#mainContent').slideDown();
-        console.log('form is here');
+//          THIS LOGIN CREATES A ROUTE TO CHECKLOGIN.JS WHICH COMPARES AGAINST THE DATABASE
+//        BUT CHECKLOGIN =ALSO= NEEDS TO PUT THE CONFIRMED ADDRESS INTO LOCAL STORAGE AS A FORM OF LOGGING IN
+
+        function check(e) {
+            $.ajax({
+                type: "POST",
+                url: '/check_login',
+                //            SEND AN EMAIL AS A FLAG TO CHECK AGAINST USHER DATABASE
+                data: {"email": input_flag},
+                //            RETURNED IS EITHER THE USHER OBJECT OR AN EMPTY STRING
+                success: function (returnedFlag) {
+                    console.log("111-" + returnedFlag + "-111");
+//                      IF AN EMPTY STRING IS RETURNED THEN THE LOG-IN MENU DROPS
+                    if (returnedFlag.length === 0){
+                        console.log("help");
+                        $('#mainContent').slideDown();
+                    }
+
+                    else {
+                        console.log("redirect!");
+                    }
+
+                }
+
+
+            });
+
+
+        };
+
+        check();
+
     });
+
 
 
 
@@ -35,10 +53,8 @@ $(function() {
     function unreal(){
 
         var email = $('#email').val()
-//         ,  toggleContact = $('#toggleContact')
             ,  lastname = $('#lastname').val()
             ,  firstname = $('#firstname').val()
-//         ,  outtaTown = $('#outtaTown').val()
             ,  streetAddress = $('#streetAddress').val()
             ,  cityAddress = $('#cityAddress').val()
             ,  zipAddress = $('#zipAddress').val()
@@ -46,24 +62,20 @@ $(function() {
             ,  altPhone = $('#altPhone').val()
             ,  contactMethod = $('#contactMethod').val();
 
-
-        console.log(email);
-
         $.ajax({
             type: "POST",
             url: '/submit_form',
             data: {"email": email
-//              ,    "toggleContact": toggleContact
                 ,    "lastname": lastname
                 ,    "firstname": firstname
-//              ,    "outtaTown": outtaTown
                 ,    "streetAddress": streetAddress
                 ,    "cityAddress": cityAddress
                 ,    "zipAddress": zipAddress
                 ,    "contactMethod": contactMethod
                 ,    "cellNo": cellNo
                 ,    "altPhone": altPhone},
-            success: function(returnedFlag){
+            success: function(returned){
+                console.log(returned);
                 window.location.href = 'http://localhost:3000/'
             }
         });
@@ -73,7 +85,5 @@ $(function() {
 
 
     };
-    console.log('blue');
-
 
 });

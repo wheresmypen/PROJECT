@@ -2,7 +2,6 @@
 // It will be available on every page in the basic layout
 
 $('#exitUser').on('click', function() {
-    console.log('button works');
 });
 
 // HERE are the navigation buttons within the body

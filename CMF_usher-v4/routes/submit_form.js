@@ -9,26 +9,12 @@ var Comment = mongoose.model('Comment');
 router.get('/', function(req, res) {
 
     console.log('Vaboom!');
-//    console.log(req);
-//
-//    res.render('layout');
 
     res.render('index');
 
-    /*    Comment.find(function(err, comments){
-     res.render(
-     'user_form',
-     {comments : comments}
-     );
-     });*/
+
 });
 
-
-//router.post('/', function(req, res){
-//    var topo = req.body.comment;
-//    console.log(topo + "123456");
-//    res.render('table');
-//});
 
 router.post('/', function(req, res) {
 
@@ -49,24 +35,17 @@ router.post('/', function(req, res) {
 
         if (comments.length > 0) {
             console.log("LOGGED-IN");
-            console.log(comments[0] + "%%%%%%");
             comments = comments[0];
             console.log(comments+'+++++');
-//            res.send(comments);
-//            window.location.href = 'http://localhost:3000/siteMap'
         }
 
         else {
             console.log("does not exist");
-            console.log(dummy);
-            res.send(dummy);
-//            res.render('../views/user_form');
+            res.return(dummy);
         }
     });
 
-
     //////////
-
 
 
     new Comment(

@@ -2,20 +2,20 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var Comment = new Schema({
-//    toggleContact: Boolean,
     email : String,
     lastname : String,
     firstname: String,
-//    outtaTown: Boolean,
     streetAddress: String,
     cityAddress: String,
     zipAddress: Number,
     cellNo: Number,
     altPhone: Number,
-//    positions: Array,
-//    dates: Array
 });
 
+// This puts the data into the correct 'collection'
+
 mongoose.model('Comment', Comment);
+
+// This puts the data into the correct database
 
 mongoose.connect('mongodb://localhost/nosey');
