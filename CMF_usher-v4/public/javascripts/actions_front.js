@@ -1,5 +1,7 @@
 $(function(){
 
+var person = sessionStorage.getItem('login');
+
 if (sessionStorage.getItem("login")){
 
     $('#exitUser').on('click', function() {
