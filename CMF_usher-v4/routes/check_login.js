@@ -19,6 +19,7 @@ router.post('/', function(req, res) {
         if (comments.length > 0) {
             console.log("LOGGED-IN");
             comments = comments[0];
+            console.log(comments);
             flag=comments;
         }
 

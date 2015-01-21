@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-    console.log("problem");
+    console.log("RENDER START PAGE");
     console.log(req.body);
     /*    if res.body === "loop"{
      console.log("going in circles");

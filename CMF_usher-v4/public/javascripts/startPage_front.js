@@ -18,7 +18,7 @@ $(function() {
             $.ajax({
                 type: "POST",
                 url: '/check_login',
-                //            SEND AN EMAIL AS A FLAG TO CHECK AGAINST USHER DATABASE
+                //            SEND AN EMAIL ADDRESS AS A FLAG TO CHECK AGAINST USHER DATABASE
                 data: {"email": input_flag},
                 //            RETURNED IS EITHER THE USHER OBJECT OR AN EMPTY STRING
                 success: function (returnedFlag) {
@@ -30,7 +30,9 @@ $(function() {
                     }
 
                     else {
+                        sessionStorage.setItem("login",(returnedFlag["email"]));
                         console.log("redirect!");
+                        window.location.href = 'http://localhost:3000/'
                     }
 
                 }
@@ -42,6 +44,13 @@ $(function() {
         };
 
         check();
+
+        if(typeof(Storage) !== "undefined") {
+            // Code for localStorage/sessionStorage.
+            console.log(typeof(Storage))
+        } else {
+            console.log('Sorry! No Web Storage support...');
+        }
 
     });
 

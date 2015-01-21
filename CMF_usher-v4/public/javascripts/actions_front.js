@@ -1,23 +1,34 @@
-// This log-out function is disabled, but ought to toggle to global id object
-// It will be available on every page in the basic layout
+$(function(){
 
-$('#exitUser').on('click', function() {
-});
+if (sessionStorage.getItem("login")){
 
-// HERE are the navigation buttons within the body
+    $('#exitUser').on('click', function() {
+    });
 
-$('#optionsProfile').on('click', function() {
-    window.location.href = 'http://localhost:3000/optionsProfile';
-});
+    // HERE are the navigation buttons within the body
 
-$('#fullSchedule').on('click', function() {
-    window.location.href = 'http://localhost:3000/fullSchedule';
-});
+    $('#optionsProfile').on('click', function() {
+        window.location.href = 'http://localhost:3000/optionsProfile';
+    });
 
-$('#startPage').on('click', function() {
+    $('#fullSchedule').on('click', function() {
+        window.location.href = 'http://localhost:3000/fullSchedule';
+    });
+
+    $('#startPage').on('click', function() {
+        window.location.href = 'http://localhost:3000/startPage';
+    });
+
+    $('#siteMap').on('click', function(){
+       window.location.href = 'http://localhost:3000/siteMap';
+    });
+
+}
+
+else {
+
     window.location.href = 'http://localhost:3000/startPage';
-});
 
-$('#siteMap').on('click', function(){
-   window.location.href = 'http://localhost:3000/siteMap';
+}
+
 });

@@ -4,7 +4,6 @@ var mongoose = require( 'mongoose' );
 var Comment = mongoose.model('Comment');
 
 
-
 /* GET form. */
 router.get('/', function(req, res) {
 
@@ -23,7 +22,6 @@ router.post('/', function(req, res) {
     console.log(formContents.email+"------");
 
     var queryString = formContents.email;
-    ////////// ADDED FROM VERSION 3
 
     var dummy = {
         firstname : "false return"
@@ -41,7 +39,7 @@ router.post('/', function(req, res) {
 
         else {
             console.log("does not exist");
-            res.return(dummy);
+            res.send(dummy);
         }
     });
 
