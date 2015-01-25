@@ -28,10 +28,19 @@ router.post('/', function(req, res) {
         }
 
         res.send(flag);
-
+        return;
     });
 
 });
+
+router.get('/', function(req, res){
+
+    sessionStorage.clear();
+    res.redirect("/");
+
+});
+
+
 
 
 

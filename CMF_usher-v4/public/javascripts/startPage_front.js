@@ -8,11 +8,13 @@ $(function() {
 
         var input_flag = $('#user_email').val();
 
-
 //        YOU ALSO NEED TO SET UP AN AJAX ROUTE TO CHECK AGAINST THE DATABASE
 
 //          THIS LOGIN CREATES A ROUTE TO CHECKLOGIN.JS WHICH COMPARES AGAINST THE DATABASE
-//        BUT CHECKLOGIN =ALSO= NEEDS TO PUT THE CONFIRMED ADDRESS INTO LOCAL STORAGE AS A FORM OF LOGGING IN
+
+//        BUT CHECKLOGIN =ALSO= NEEDS TO PUT THE CONFIRMED ADDRESS INTO A SESSION AS A FORM OF LOGGING IN
+
+//         CURRENTLY THIS HAPPENS ON THE FRONT END USING SESSION STORAGE AS A FUNCTIONAL PROXY
 
         function check(e) {
             $.ajax({
@@ -44,13 +46,6 @@ $(function() {
         };
 
         check();
-
-        if(typeof(Storage) !== "undefined") {
-            // Code for localStorage/sessionStorage.
-            console.log(typeof(Storage))
-        } else {
-            console.log('Sorry! No Web Storage support...');
-        }
 
     });
 
@@ -88,10 +83,6 @@ $(function() {
                 window.location.href = 'http://localhost:3000/'
             }
         });
-
-
-        console.log("mweh-he-he");
-
 
     };
 

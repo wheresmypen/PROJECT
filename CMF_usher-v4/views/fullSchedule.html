@@ -19,98 +19,101 @@
 
   </head>
   <body>
-    <h2>Here lies a list  of the upcoming CMF shows</h2>
-    <a href="http://localhost:3000/" id="fullScheduleReturn">Return</a>
+      <span>You are logged in as:</span>
+      <span id="loggedID"></span>
 
-    <form>
-        <label for="email_login" class="toplabel std">Email look-up:</label>
-        <input type="email" id="email_login" name="email-id" size="30" maxlength="100"/>
-        <button type="button" id="submitUsher">ENTER</button>
-    </form>
+        <h2>Here lies a list  of the upcoming CMF shows</h2>
+        <a href="http://localhost:3000/" id="fullScheduleReturn">Return</a>
 
-    <table class="table table-condensed">
-      <thead>
-        <tr><!--class="success" #dff0d8-->
-          <th class="schDay">DAY</th>
-          <th class="schDate">DATE</th>
-          <th class="schTime">TIME</th>
-          <th class="schEvent">EVENT</th>
-          <th class="schMusic">PERFORMANCE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="active"> <!--#f5f5f5-->
-            <td class="schDay"><button type="button" id="concert1"></button>SUNDAY</td>
-            <td class="schDate upcoming">June 29th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Carlos Miguel - Conductor</td>
-            <td class="schMusic">Haydn / Mozart / Beethoven</td>
-        </tr>
-        <tr class="warning"> <!--#fcf8e3-->
-            <td class="schDay"><button type="button" id="concert2"></button>TUESDAY</td>
-            <td class="schDate">July 1st</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Steve Hackman</td>
-            <td class="schMusic">Coldplay & Beethoven</td>
-        </tr>
-        <tr class="warning"> <!--#fcf8e3-->
-            <td class="schDay"><button type="button" id="concert3"></button>THRS/FRI</td>
-            <td class="schDate">July 3rd</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Lawrence Golan</td>
-            <td class="schMusic">Patriotism & Pops</td>
-        </tr>
-        <tr class="warning"> <!--#fcf8e3-->
-            <td class="schDay">SUNDAY</td>
-            <td class="schDate">July 6th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">William Boughton</td>
-            <td class="schMusic">Britten / Sibelius / Ravel</td>
-        </tr>
-        <tr class="warning"> <!--#fcf8e3-->
-            <td class="schDay">TUESDAY</td>
-            <td class="schDate">July 8th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Chamber Players/td>
-            <td class="schMusic">Debussy / Ravel / Faure</td>
-        </tr>
-        <tr class="warning"> <!--#fcf8e3-->
-            <td class="schDay">THRS/FRI</td>
-            <td class="schDate">July 10th & 11th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Chamber Players/td>
-            <td class="schMusic">Debussy / Ravel / Faure</td>
-        </tr>
-        <tr class="danger"> <!--#f2dede-->
-            <td class="schDay">SUNDAY</td>
-            <td class="schDate">July 13th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Larry Tachleff - Conductor</td>
-            <td class="schMusic">Ravel / Canteloube / Beethoven</td>
-        </tr>
-        <tr class="danger"> <!--#f2dede-->
-            <td class="schDay">TUESDAY</td>
-            <td class="schDate">July 15th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">MUSIC MASH-UP</td>
-            <td class="schMusic">TBD</td>
-        </tr>
-        <tr class="danger"> <!--#f2dede-->
-            <td class="schDay">THRS/FRI</td>
-            <td class="schDate">July 17th & 18th</td>
-            <td class="schTime">10:00 AM</td>
-            <td class="schEvent">Carlos Prieto - Conductor</td>
-            <td class="schMusic">Ginastera / Falla / Stravinsky</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <div style="text-align: center">------KEY TO SCHEDULE ASSIGNMENTS------</div>
-    <div class="colorKey">
-        <p class="bg-active">NEXT SCHEDULED EVENT</p><br>
-        <p class="bg-success">YOU ARE SCHEDULED FOR THIS EVENT</p><br>
-        <p class="bg-warning">THIS EVENT STILL HAS OPENINGS</p><br>
-        <p class="bg-danger">THIS EVENT DOES NOT NEED ANY MORE USHERS</p><br>
-    </div>
+        <form>
+            <label for="email_login" class="toplabel std">Email look-up:</label>
+            <input type="email" id="email_login" name="email-id" size="30" maxlength="100"/>
+            <button type="button" id="submitUsher">ENTER</button>
+        </form>
+
+        <table class="table table-condensed">
+          <thead>
+            <tr><!--class="success" #dff0d8-->
+              <th class="schDay">DAY</th>
+              <th class="schDate">DATE</th>
+              <th class="schTime">TIME</th>
+              <th class="schEvent">EVENT</th>
+              <th class="schMusic">PERFORMANCE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="active"> <!--#f5f5f5-->
+                <td class="schDay"><button type="button" id="concert1"></button>SUNDAY</td>
+                <td class="schDate upcoming">June 29th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Carlos Miguel - Conductor</td>
+                <td class="schMusic">Haydn / Mozart / Beethoven</td>
+            </tr>
+            <tr class="warning"> <!--#fcf8e3-->
+                <td class="schDay"><button type="button" id="concert2"></button>TUESDAY</td>
+                <td class="schDate">July 1st</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Steve Hackman</td>
+                <td class="schMusic">Coldplay & Beethoven</td>
+            </tr>
+            <tr class="warning"> <!--#fcf8e3-->
+                <td class="schDay"><button type="button" id="concert3"></button>THRS/FRI</td>
+                <td class="schDate">July 3rd</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Lawrence Golan</td>
+                <td class="schMusic">Patriotism & Pops</td>
+            </tr>
+            <tr class="warning"> <!--#fcf8e3-->
+                <td class="schDay">SUNDAY</td>
+                <td class="schDate">July 6th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">William Boughton</td>
+                <td class="schMusic">Britten / Sibelius / Ravel</td>
+            </tr>
+            <tr class="warning"> <!--#fcf8e3-->
+                <td class="schDay">TUESDAY</td>
+                <td class="schDate">July 8th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Chamber Players/td>
+                <td class="schMusic">Debussy / Ravel / Faure</td>
+            </tr>
+            <tr class="warning"> <!--#fcf8e3-->
+                <td class="schDay">THRS/FRI</td>
+                <td class="schDate">July 10th & 11th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Chamber Players/td>
+                <td class="schMusic">Debussy / Ravel / Faure</td>
+            </tr>
+            <tr class="danger"> <!--#f2dede-->
+                <td class="schDay">SUNDAY</td>
+                <td class="schDate">July 13th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Larry Tachleff - Conductor</td>
+                <td class="schMusic">Ravel / Canteloube / Beethoven</td>
+            </tr>
+            <tr class="danger"> <!--#f2dede-->
+                <td class="schDay">TUESDAY</td>
+                <td class="schDate">July 15th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">MUSIC MASH-UP</td>
+                <td class="schMusic">TBD</td>
+            </tr>
+            <tr class="danger"> <!--#f2dede-->
+                <td class="schDay">THRS/FRI</td>
+                <td class="schDate">July 17th & 18th</td>
+                <td class="schTime">10:00 AM</td>
+                <td class="schEvent">Carlos Prieto - Conductor</td>
+                <td class="schMusic">Ginastera / Falla / Stravinsky</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <div style="text-align: center">------KEY TO SCHEDULE ASSIGNMENTS------</div>
+        <div class="colorKey">
+            <p class="bg-active">NEXT SCHEDULED EVENT</p><br>
+            <p class="bg-success">YOU ARE SCHEDULED FOR THIS EVENT</p><br>
+            <p class="bg-warning">THIS EVENT STILL HAS OPENINGS</p><br>
+            <p class="bg-danger">THIS EVENT DOES NOT NEED ANY MORE USHERS</p><br>
+        </div>
   </body>
 </html>
