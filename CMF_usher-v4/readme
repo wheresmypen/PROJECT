@@ -1,1 +1,8 @@
 Instructions for viewing
+
+1. Clone repository to your local machine.
+2. Navigate to the 'CMF_usher-v4' directory.
+3. Run 'npm install' to install dependencies.
+4. Open a mongo.db server.
+5. Run 'node app' to create server listening on 'localhost:3000'
+6. Navigate to 'localhost:3000' using your browser.
